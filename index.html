@@ -146,6 +146,8 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
 .cruise-day-body ul { list-style:none; padding:0; }
 .cruise-day-body ul li { padding:2px 0; }
 .cruise-day-body ul li::before { content:'›'; color:var(--crimson); margin-right:7px; font-weight:700; }
+.cd-dining { margin-top:10px; padding-top:9px; border-top:1px dashed var(--border); font-size:12px; color:var(--text-muted); line-height:1.6; }
+.cd-dining b { color:var(--crimson); font-weight:600; }
 
 /* ── MAP SECTION (no API key needed) ── */
 .map-section { border-top:2px solid var(--border); background:var(--surface2); }
@@ -250,10 +252,10 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
 .tip-card-icon { font-size:18px; }
 .tip-item { font-size:12px; color:var(--text-muted); padding:5px 0; border-bottom:1px solid var(--border); line-height:1.5; display:flex; gap:8px; }
 .tip-item:last-child { border-bottom:none; }
-.tip-item::before { content:'💡'; font-size:12px; flex-shrink:0; }
-.tip-item.warn::before { content:'⚠️'; }
-.tip-item.check::before { content:'✅'; }
-.tip-item.map-t::before { content:'📍'; }
+.tip-item::before { content:'•'; font-size:12px; flex-shrink:0; }
+.tip-item.warn::before { content:'!'; }
+.tip-item.check::before { content:'✓'; }
+.tip-item.map-t::before { content:'•'; }
 .tip-item strong { font-weight:500; color:var(--text); }
 
 .trip-footer { text-align:center; padding:1.4rem; font-size:12px; color:var(--text-muted); border-top:1px solid var(--border); margin-top:.5rem; }
@@ -288,7 +290,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
 .splash-title { font-size:14px; font-weight:500; color:#E8B84B; margin-bottom:2px; }
 .splash-price { font-size:11px; color:rgba(255,255,255,0.6); margin-bottom:8px; }
 .splash-item { font-size:11px; color:rgba(255,255,255,0.8); padding:2px 0; display:flex; gap:7px; }
-.splash-item::before { content:'✦'; color:#E8B84B; font-size:9px; flex-shrink:0; margin-top:1px; }
+.splash-item::before { content:'•'; color:#E8B84B; font-size:9px; flex-shrink:0; margin-top:1px; }
 .booking-opens-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:10px; }
 .booking-opens-card { background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:9px 11px; }
 .bo-label { font-size:9px; font-weight:500; text-transform:uppercase; letter-spacing:1px; color:var(--text-muted); margin-bottom:3px; }
@@ -463,12 +465,12 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
   <!-- FILTER BAR -->
   <div class="filter-bar">
     <span class="filter-label">Filter:</span>
-    <button class="filter-btn is-active" data-filter="all"      onclick="setFilter(this)">All</button>
-    <button class="filter-btn"           data-filter="carolina" onclick="setFilter(this)">&#9889; Carolina</button>
-    <button class="filter-btn"           data-filter="gary"     onclick="setFilter(this)">&#128218; Gary</button>
-    <button class="filter-btn"           data-filter="eat"      onclick="setFilter(this)">Places to Eat</button>
-    <button class="filter-btn"           data-filter="drink"    onclick="setFilter(this)">Grab a Drink</button>
-    <button class="filter-btn"           data-filter="do"       onclick="setFilter(this)">Things to Do</button>
+    <button class="filter-btn is-active" data-filter="all" onclick="setFilter(this)">All</button>
+    <button class="filter-btn" data-filter="carolina" onclick="setFilter(this)">Carolina</button>
+    <button class="filter-btn" data-filter="gary" onclick="setFilter(this)">Gary</button>
+    <button class="filter-btn" data-filter="eat" onclick="setFilter(this)">Places to Eat</button>
+    <button class="filter-btn" data-filter="drink" onclick="setFilter(this)">Grab a Drink</button>
+    <button class="filter-btn" data-filter="do" onclick="setFilter(this)">Things to Do</button>
   </div>
 
   <!-- ─── DAY 1: AUG 18 ─── -->
@@ -477,7 +479,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
       <div class="day-header">
         <div class="day-badge badge-london">18<small>AUG</small></div>
         <div class="day-title-block">
-          <div class="day-num">Day 1 · Monday</div>
+          <div class="day-num">Day 1 · Tuesday</div>
           <div class="day-title">Hello, London</div>
           <div class="day-date">First-timers arrive · Heathrow to Victoria</div>
         </div>
@@ -495,7 +497,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
           <div class="tl-title">Land at Heathrow (LHR)</div>
           <div class="tl-desc">Heathrow Express or Uber to Victoria Station (~15 min). Room is reserved from Aug 17 — check straight in when you land. No waiting!</div>
           <div class="tl-actions">
-            <a class="map-link" href="https://maps.google.com/?q=Heathrow+Airport+London" target="_blank">📍 Heathrow Airport</a>
+            <a class="map-link" href="https://maps.google.com/?q=Heathrow+Airport+London" target="_blank">Heathrow Airport</a>
             <span class="tl-badge tag-do">Things to Do</span>
           </div>
         </div>
@@ -505,7 +507,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
           <div class="tl-title">Borough Market for Lunch</div>
           <div class="tl-desc">London's greatest food market. Try Monmouth Coffee, Neal's Yard cheese, and a fresh Raclette. Cross the Thames for immediate London vibes.</div>
           <div class="tl-actions">
-            <a class="map-link" href="https://maps.google.com/?q=Borough+Market+London" target="_blank">📍 Borough Market</a>
+            <a class="map-link" href="https://maps.google.com/?q=Borough+Market+London" target="_blank">Borough Market</a>
             <span class="tl-badge tag-eat">Places to Eat</span>
           </div>
         </div>
@@ -518,7 +520,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
           <div class="tl-title">South Bank Wander</div>
           <div class="tl-desc">Stroll the Thames — London Eye, Big Ben, Parliament. Tate Modern (free) steps away. Walk Millennium Bridge for a stunning panorama.</div>
           <div class="tl-actions">
-            <a class="map-link" href="https://maps.google.com/?q=South+Bank+London" target="_blank">📍 South Bank</a>
+            <a class="map-link" href="https://maps.google.com/?q=South+Bank+London" target="_blank">South Bank</a>
             <span class="tl-badge tag-do">Things to Do</span>
           </div>
         </div>
@@ -528,7 +530,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
           <div class="tl-title">Sherlock Holmes Mystery Trail</div>
           <div class="tl-desc">Self-guided app-based walk solving a mystery through London's streets. Starts near Baker Street — brilliant way to explore while staying awake after the overnight flight.</div>
           <div class="tl-actions">
-            <a class="map-link" href="https://maps.google.com/?q=Baker+Street+London" target="_blank">📍 Baker Street</a>
+            <a class="map-link" href="https://maps.google.com/?q=Baker+Street+London" target="_blank">Baker Street</a>
             <span class="tl-badge tag-do">Things to Do</span>
             <span class="tl-badge tag-viator">Booked · Viator #1369291137 ✓</span>
           </div>
@@ -540,7 +542,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
           <div class="tl-desc">One of London's best used & vintage bookstores in the Brunswick Centre basement. Thousands of secondhand books at great prices.</div>
           <div class="tl-actions">
             <a class="tl-link" href="https://www.skoob.com" target="_blank">skoob.com ↗</a>
-            <a class="map-link" href="https://maps.google.com/?q=Skoob+Books+London" target="_blank">📍 Map</a>
+            <a class="map-link" href="https://maps.google.com/?q=Skoob+Books+London" target="_blank">Map</a>
             <span class="tl-badge tag-gary">For Gary</span>
             <span class="tl-badge tag-do">Things to Do</span>
           </div>
@@ -554,8 +556,8 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
           <div class="tl-title">Harry Potter Guided Tour of London + Boat Ride</div>
           <div class="tl-desc">Walk the real London filming locations — the Leaky Cauldron, Ministry of Magic, and Diagon Alley filming spots with a knowledgeable guide. Includes a Thames boat ride!</div>
           <div class="tl-actions">
-            <a class="map-link" href="https://maps.google.com/?q=Charing+Cross+Station+London" target="_blank">📍 Meet point</a>
-            <span class="tl-badge tag-hp">For Carolina ⚡</span>
+            <a class="map-link" href="https://maps.google.com/?q=Charing+Cross+Station+London" target="_blank">Meet point</a>
+            <span class="tl-badge tag-hp">For Carolina</span>
             <span class="tl-badge tag-do">Things to Do</span>
             <span class="tl-badge tag-viator">Booked · Viator #1366333643 ✓</span>
           </div>
@@ -567,8 +569,8 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
           <div class="tl-desc">Padella near Borough Market — incredible fresh hand-rolled pasta. Or Hakata on Wardour St for late-night Japanese ramen vibes.</div>
           <div class="tl-actions">
             <a class="tl-link" href="https://www.padella.co" target="_blank">padella.co ↗</a>
-            <a class="map-link" href="https://maps.google.com/?q=Padella+Borough+Market+London" target="_blank">📍 Padella</a>
-            <a class="map-link" href="https://maps.google.com/?q=Hakata+Ramen+Wardour+Street+London" target="_blank">📍 Hakata</a>
+            <a class="map-link" href="https://maps.google.com/?q=Padella+Borough+Market+London" target="_blank">Padella</a>
+            <a class="map-link" href="https://maps.google.com/?q=Hakata+Ramen+Wardour+Street+London" target="_blank">Hakata</a>
             <span class="tl-badge tag-eat">Places to Eat</span>
           </div>
         </div>
@@ -579,12 +581,12 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
           <div class="tl-desc">London's most theatrical speakeasy — 1940s post-war underground railway station. Hidden entrance, incredible cocktails, unforgettable first-night atmosphere.</div>
           <div class="tl-actions">
             <a class="tl-link" href="https://www.cahoots.co.uk/cahoots-postal-office/" target="_blank">cahoots.co.uk ↗</a>
-            <a class="map-link" href="https://maps.google.com/?q=Cahoots+Postal+Office+London" target="_blank">📍 Map</a>
+            <a class="map-link" href="https://maps.google.com/?q=Cahoots+Postal+Office+London" target="_blank">Map</a>
             <span class="tl-badge tag-drink">Grab a Drink</span>
           </div>
         </div>
       </div>
-      <div class="tip-box"><strong>💡 Jet lag tip:</strong> Push through until at least 9 PM before sleeping. The HP tour in the evening is perfect for keeping you both awake and excited!</div>
+      <div class="tip-box"><strong>Jet lag tip:</strong> Push through until at least 9 PM before sleeping. The HP tour in the evening is perfect for keeping you both awake and excited!</div>
     </div>
     <div class="map-section">
       <div class="map-section-header" onclick="toggleMap('map-d1','mapbtn-d1')">
@@ -594,12 +596,12 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
       <div class="map-body" id="map-d1">
         <a class="map-open-all" href="https://maps.google.com/maps/dir/Borough+Market+London/South+Bank+London/Baker+Street+London/Padella+London/Cahoots+London" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a73e8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg> Open full day route in Google Maps</a>
         <div class="map-pins">
-          <a class="map-pin" href="https://maps.google.com/?q=Borough+Market+London" target="_blank"><div class="map-pin-emoji">🍴</div><div class="map-pin-info"><div class="map-pin-name">Borough Market</div><div class="map-pin-type">Lunch · Places to Eat</div></div><div class="map-pin-arrow">↗</div></a>
-          <a class="map-pin" href="https://maps.google.com/?q=South+Bank+London" target="_blank"><div class="map-pin-emoji">🌉</div><div class="map-pin-info"><div class="map-pin-name">South Bank</div><div class="map-pin-type">Sightseeing · Things to Do</div></div><div class="map-pin-arrow">↗</div></a>
-          <a class="map-pin" href="https://maps.google.com/?q=Baker+Street+London" target="_blank"><div class="map-pin-emoji">🔍</div><div class="map-pin-info"><div class="map-pin-name">Baker Street</div><div class="map-pin-type">Sherlock Trail · Things to Do</div></div><div class="map-pin-arrow">↗</div></a>
-          <a class="map-pin" href="https://maps.google.com/?q=Skoob+Books+London" target="_blank"><div class="map-pin-emoji">📚</div><div class="map-pin-info"><div class="map-pin-name">Skoob Books</div><div class="map-pin-type">Bookshop · For Gary</div></div><div class="map-pin-arrow">↗</div></a>
-          <a class="map-pin" href="https://maps.google.com/?q=Padella+Borough+Market+London" target="_blank"><div class="map-pin-emoji">🍝</div><div class="map-pin-info"><div class="map-pin-name">Padella</div><div class="map-pin-type">Dinner · Places to Eat</div></div><div class="map-pin-arrow">↗</div></a>
-          <a class="map-pin" href="https://maps.google.com/?q=Cahoots+Postal+Office+London" target="_blank"><div class="map-pin-emoji">🍸</div><div class="map-pin-info"><div class="map-pin-name">Cahoots Postal Office</div><div class="map-pin-type">Speakeasy · Grab a Drink</div></div><div class="map-pin-arrow">↗</div></a>
+          <a class="map-pin" href="https://maps.google.com/?q=Borough+Market+London" target="_blank"><div class="map-pin-info"><div class="map-pin-name">Borough Market</div><div class="map-pin-type">Lunch · Places to Eat</div></div><div class="map-pin-arrow">↗</div></a>
+          <a class="map-pin" href="https://maps.google.com/?q=South+Bank+London" target="_blank"><div class="map-pin-info"><div class="map-pin-name">South Bank</div><div class="map-pin-type">Sightseeing · Things to Do</div></div><div class="map-pin-arrow">↗</div></a>
+          <a class="map-pin" href="https://maps.google.com/?q=Baker+Street+London" target="_blank"><div class="map-pin-info"><div class="map-pin-name">Baker Street</div><div class="map-pin-type">Sherlock Trail · Things to Do</div></div><div class="map-pin-arrow">↗</div></a>
+          <a class="map-pin" href="https://maps.google.com/?q=Skoob+Books+London" target="_blank"><div class="map-pin-info"><div class="map-pin-name">Skoob Books</div><div class="map-pin-type">Bookshop · For Gary</div></div><div class="map-pin-arrow">↗</div></a>
+          <a class="map-pin" href="https://maps.google.com/?q=Padella+Borough+Market+London" target="_blank"><div class="map-pin-info"><div class="map-pin-name">Padella</div><div class="map-pin-type">Dinner · Places to Eat</div></div><div class="map-pin-arrow">↗</div></a>
+          <a class="map-pin" href="https://maps.google.com/?q=Cahoots+Postal+Office+London" target="_blank"><div class="map-pin-info"><div class="map-pin-name">Cahoots Postal Office</div><div class="map-pin-type">Speakeasy · Grab a Drink</div></div><div class="map-pin-arrow">↗</div></a>
         </div>
       </div>
     </div>
@@ -611,7 +613,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
       <div class="day-header">
         <div class="day-badge badge-travel">19<small>AUG</small></div>
         <div class="day-title-block">
-          <div class="day-num">Day 2 · Tuesday</div>
+          <div class="day-num">Day 2 · Wednesday</div>
           <div class="day-title">London to Portsmouth</div>
           <div class="day-date">Sail-eve — Last morning in London</div>
         </div>
@@ -629,7 +631,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
           <div class="tl-title">Breakfast: Giraffe, Victoria</div>
           <div class="tl-desc">A vibrant world-food café just around the corner from CitizenM. Bright, relaxed atmosphere — perfect fuel before heading to Portsmouth. 120 Wilton Rd, Pimlico, SW1V 1JZ.</div>
           <div class="tl-actions">
-            <a class="map-link" href="https://maps.app.goo.gl/xao73ZEfwQ7413np9" target="_blank">📍 Map</a>
+            <a class="map-link" href="https://maps.app.goo.gl/xao73ZEfwQ7413np9" target="_blank">Map</a>
             <span class="tl-badge tag-eat">Places to Eat</span>
           </div>
         </div>
@@ -639,7 +641,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
           <div class="tl-title">Notting Hill Bookshop</div>
           <div class="tl-desc">The real bookshop from the 1999 film. Lovely independent store on Portobello Road with great travel and fiction sections.</div>
           <div class="tl-actions">
-            <a class="map-link" href="https://maps.google.com/?q=The+Notting+Hill+Bookshop+London" target="_blank">📍 Map</a>
+            <a class="map-link" href="https://maps.google.com/?q=The+Notting+Hill+Bookshop+London" target="_blank">Map</a>
             <span class="tl-badge tag-gary">For Gary</span>
             <span class="tl-badge tag-do">Things to Do</span>
           </div>
@@ -654,7 +656,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
           <div class="tl-desc">~1h 45min direct. South Western Railway, from ~£15–30pp. Trains every 30 min — scenic Hampshire route.</div>
           <div class="tl-actions">
             <a class="tl-link" href="https://www.nationalrail.co.uk" target="_blank">nationalrail.co.uk ↗</a>
-            <a class="map-link" href="https://maps.google.com/?q=London+Waterloo+Station" target="_blank">📍 Waterloo Station</a>
+            <a class="map-link" href="https://maps.google.com/?q=London+Waterloo+Station" target="_blank">Waterloo Station</a>
             <span class="tl-badge tag-do">Things to Do</span>
           </div>
         </div>
@@ -668,7 +670,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
           <div class="tl-desc">Portsmouth's gorgeous harbourfront. Walk the waterfront, Spinnaker Tower views over the Solent. Great waterside restaurants and shops.</div>
           <div class="tl-actions">
             <a class="tl-link" href="https://www.gunwharf-quays.com" target="_blank">gunwharf-quays.com ↗</a>
-            <a class="map-link" href="https://maps.google.com/?q=Gunwharf+Quays+Portsmouth" target="_blank">📍 Map</a>
+            <a class="map-link" href="https://maps.google.com/?q=Gunwharf+Quays+Portsmouth" target="_blank">Map</a>
             <span class="tl-badge tag-do">Things to Do</span>
           </div>
         </div>
@@ -679,7 +681,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
           <div class="tl-desc">Portsmouth's beloved craft brewery and taproom. Great ales and IPAs — perfect pre-cruise coastal pints.</div>
           <div class="tl-actions">
             <a class="tl-link" href="https://www.staggeringlygood.com" target="_blank">staggeringlygood.com ↗</a>
-            <a class="map-link" href="https://maps.google.com/?q=Staggeringly+Good+Brewery+Portsmouth" target="_blank">📍 Map</a>
+            <a class="map-link" href="https://maps.google.com/?q=Staggeringly+Good+Brewery+Portsmouth" target="_blank">Map</a>
             <span class="tl-badge tag-gary">For Gary</span>
             <span class="tl-badge tag-drink">Grab a Drink</span>
           </div>
@@ -692,7 +694,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
           <div class="option-name">ÌBÍLÉ Restaurant & Lounge</div>
           <div class="option-detail">West African cuisine and cocktails. Bold flavours and a lively atmosphere.</div>
           <div class="tl-actions" style="margin-top:6px;">
-            <a class="map-link" href="https://maps.app.goo.gl/qQuNm2CN2eY25xz19" target="_blank">📍 Map</a>
+            <a class="map-link" href="https://maps.app.goo.gl/qQuNm2CN2eY25xz19" target="_blank">Map</a>
             <span class="tl-badge tag-eat">Places to Eat</span>
           </div>
         </div>
@@ -701,12 +703,12 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
           <div class="option-name">Justasia</div>
           <div class="option-detail">Pan-Asian flavours in Portsmouth — fresh, vibrant sharing plates.</div>
           <div class="tl-actions" style="margin-top:6px;">
-            <a class="map-link" href="https://maps.app.goo.gl/NR59YWTgSYpkRz9Z7" target="_blank">📍 Map</a>
+            <a class="map-link" href="https://maps.app.goo.gl/NR59YWTgSYpkRz9Z7" target="_blank">Map</a>
             <span class="tl-badge tag-eat">Places to Eat</span>
           </div>
         </div>
       </div>
-      <div class="tip-box"><strong>🚢 Tonight:</strong> Pack your cruise bag! Board August 20th from Portsmouth Harbour. Download the Virgin Voyages Sailor app to pre-book restaurants and shows before you sail.</div>
+      <div class="tip-box"><strong>Tonight:</strong> Pack your cruise bag! Board August 20th from Portsmouth Harbour. Download the Virgin Voyages Sailor app to pre-book restaurants and shows before you sail.</div>
     </div>
     <div class="map-section">
       <div class="map-section-header" onclick="toggleMap('map-d2','mapbtn-d2')">
@@ -716,12 +718,12 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
       <div class="map-body" id="map-d2">
         <a class="map-open-all" href="https://maps.google.com/maps/dir/Giraffe+Pimlico+London/Notting+Hill+Bookshop/Gunwharf+Quays+Portsmouth" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a73e8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg> Open day route in Google Maps</a>
         <div class="map-pins">
-          <a class="map-pin" href="https://maps.app.goo.gl/xao73ZEfwQ7413np9" target="_blank"><div class="map-pin-emoji">🦒</div><div class="map-pin-info"><div class="map-pin-name">Giraffe, Victoria</div><div class="map-pin-type">Breakfast · Places to Eat</div></div><div class="map-pin-arrow">↗</div></a>
-          <a class="map-pin" href="https://maps.google.com/?q=The+Notting+Hill+Bookshop+London" target="_blank"><div class="map-pin-emoji">📚</div><div class="map-pin-info"><div class="map-pin-name">Notting Hill Bookshop</div><div class="map-pin-type">For Gary · Things to Do</div></div><div class="map-pin-arrow">↗</div></a>
-          <a class="map-pin" href="https://maps.google.com/?q=Gunwharf+Quays+Portsmouth" target="_blank"><div class="map-pin-emoji">🌊</div><div class="map-pin-info"><div class="map-pin-name">Gunwharf Quays</div><div class="map-pin-type">Portsmouth · Things to Do</div></div><div class="map-pin-arrow">↗</div></a>
-          <a class="map-pin" href="https://maps.google.com/?q=Staggeringly+Good+Brewery+Portsmouth" target="_blank"><div class="map-pin-emoji">🍺</div><div class="map-pin-info"><div class="map-pin-name">Staggeringly Good Brewery</div><div class="map-pin-type">For Gary · Grab a Drink</div></div><div class="map-pin-arrow">↗</div></a>
-          <a class="map-pin" href="https://maps.app.goo.gl/qQuNm2CN2eY25xz19" target="_blank"><div class="map-pin-emoji">🍽️</div><div class="map-pin-info"><div class="map-pin-name">ÌBÍLÉ Restaurant</div><div class="map-pin-type">Dinner A · Places to Eat</div></div><div class="map-pin-arrow">↗</div></a>
-          <a class="map-pin" href="https://maps.app.goo.gl/NR59YWTgSYpkRz9Z7" target="_blank"><div class="map-pin-emoji">🍜</div><div class="map-pin-info"><div class="map-pin-name">Justasia</div><div class="map-pin-type">Dinner B · Places to Eat</div></div><div class="map-pin-arrow">↗</div></a>
+          <a class="map-pin" href="https://maps.app.goo.gl/xao73ZEfwQ7413np9" target="_blank"><div class="map-pin-info"><div class="map-pin-name">Giraffe, Victoria</div><div class="map-pin-type">Breakfast · Places to Eat</div></div><div class="map-pin-arrow">↗</div></a>
+          <a class="map-pin" href="https://maps.google.com/?q=The+Notting+Hill+Bookshop+London" target="_blank"><div class="map-pin-info"><div class="map-pin-name">Notting Hill Bookshop</div><div class="map-pin-type">For Gary · Things to Do</div></div><div class="map-pin-arrow">↗</div></a>
+          <a class="map-pin" href="https://maps.google.com/?q=Gunwharf+Quays+Portsmouth" target="_blank"><div class="map-pin-info"><div class="map-pin-name">Gunwharf Quays</div><div class="map-pin-type">Portsmouth · Things to Do</div></div><div class="map-pin-arrow">↗</div></a>
+          <a class="map-pin" href="https://maps.google.com/?q=Staggeringly+Good+Brewery+Portsmouth" target="_blank"><div class="map-pin-info"><div class="map-pin-name">Staggeringly Good Brewery</div><div class="map-pin-type">For Gary · Grab a Drink</div></div><div class="map-pin-arrow">↗</div></a>
+          <a class="map-pin" href="https://maps.app.goo.gl/qQuNm2CN2eY25xz19" target="_blank"><div class="map-pin-info"><div class="map-pin-name">ÌBÍLÉ Restaurant</div><div class="map-pin-type">Dinner A · Places to Eat</div></div><div class="map-pin-arrow">↗</div></a>
+          <a class="map-pin" href="https://maps.app.goo.gl/NR59YWTgSYpkRz9Z7" target="_blank"><div class="map-pin-info"><div class="map-pin-name">Justasia</div><div class="map-pin-type">Dinner B · Places to Eat</div></div><div class="map-pin-arrow">↗</div></a>
         </div>
       </div>
     </div>
@@ -743,7 +745,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
       <div class="cruise-day open" id="cd1">
         <div class="cruise-day-header" onclick="toggleCD('cd1')">
           <div class="cruise-day-num">1</div>
-          <div class="cruise-day-info"><div class="cruise-day-title">Portsmouth — Embarkation 🚢</div><div class="cruise-day-sub">Wed, Aug 20 · Arrive 1:45–4 PM · Departs 6 PM</div></div>
+          <div class="cruise-day-info"><div class="cruise-day-title">Portsmouth — Embarkation</div><div class="cruise-day-sub">Thu, Aug 20 · Arrive 1:45–4 PM · Departs 6 PM</div></div>
           <div class="cruise-day-chevron">▼</div>
         </div>
         <div class="cruise-day-body">
@@ -752,14 +754,15 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
             <li>Complete "Ready to Sail" in the Sailor app before arriving to download your boarding pass</li>
             <li>Muster safety drill on boarding · Sail-away deck party as Portsmouth fades behind you</li>
           </ul>
-          <div style="margin-top:8px;"><a class="map-link" href="https://maps.google.com/?q=Portsmouth+International+Port+Terminal" target="_blank">📍 Portsmouth Port Terminal</a></div>
+          <div class="cd-dining">🍴 <b>Ariya</b> — Dinner 8:15 PM</div>
+          <div style="margin-top:8px;"><a class="map-link" href="https://maps.google.com/?q=Portsmouth+International+Port+Terminal" target="_blank">Portsmouth Port Terminal</a></div>
         </div>
       </div>
 
       <div class="cruise-day" id="cd2">
         <div class="cruise-day-header" onclick="toggleCD('cd2')">
           <div class="cruise-day-num">2</div>
-          <div class="cruise-day-info"><div class="cruise-day-title">Day at Sea 🌊</div><div class="cruise-day-sub">Thu, Aug 21 · North Sea Crossing</div></div>
+          <div class="cruise-day-info"><div class="cruise-day-title">Day at Sea</div><div class="cruise-day-sub">Fri, Aug 21 · North Sea Crossing</div></div>
           <div class="cruise-day-chevron">▼</div>
         </div>
         <div class="cruise-day-body">
@@ -767,13 +770,14 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
             <li>Sleep in — recovery day! Pool deck, The Beach Club, sun loungers on the Sundeck</li>
             <li>Book Redemption Spa treatments via the Sailor app · Explore the ship's restaurants and bars</li>
           </ul>
+          <div class="cd-dining">🍴 <b>Ariya</b> — Brunch 11:15 AM · <b>The Wake</b> — Dinner 8:15 PM</div>
         </div>
       </div>
 
       <div class="cruise-day" id="cd3">
         <div class="cruise-day-header" onclick="toggleCD('cd3')">
           <div class="cruise-day-num">3</div>
-          <div class="cruise-day-info"><div class="cruise-day-title">Bruges, Belgium 🇧🇪</div><div class="cruise-day-sub">Fri, Aug 22 · 8 AM–6 PM · Booked shuttle ✓ #1393316569</div></div>
+          <div class="cruise-day-info"><div class="cruise-day-title">Bruges, Belgium 🇧🇪</div><div class="cruise-day-sub">Sat, Aug 22 · 8 AM–6 PM · Booked shuttle ✓ #1393316569</div></div>
           <div class="cruise-day-chevron">▼</div>
         </div>
         <div class="cruise-day-body">
@@ -781,15 +785,18 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
             <li>Booked shuttle from Zeebrugge to Bruges (~30 min) — Viator ref #1393316569</li>
             <li>Canal boat tour of medieval Bruges or horse-drawn carriage through the Markt</li>
             <li>Belfry tower climb for panoramic views · Browse lace shops in the historic centre</li>
-            <li>🍺 Gary: De Garre bar — legendary house tripel, one of Belgium's finest</li>
-            <li>🍫 Carolina: The Chocolate Line for world-class pralines · Belgian waffle from a street vendor</li>
+            <li>Torture Museum (Oude Steen) — medieval instruments in one of Bruges' oldest houses (as requested)</li>
+            <li>Gary: De Garre bar — legendary house tripel, one of Belgium's finest</li>
+            <li>Carolina: The Chocolate Line for world-class pralines · Belgian waffle from a street vendor</li>
           </ul>
+          <div class="cd-dining">🍴 <b>Pink Agave</b> — Dinner 7:45 PM</div>
           <div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:10px;">
-            <a class="map-link" href="https://maps.google.com/?q=Zeebrugge+cruise+terminal+Belgium" target="_blank">📍 Zeebrugge Terminal</a>
-            <a class="map-link" href="https://maps.google.com/?q=Markt+Bruges+Belgium" target="_blank">📍 Bruges Markt</a>
-            <a class="map-link" href="https://maps.google.com/?q=Belfry+of+Bruges+Belgium" target="_blank">📍 Belfry Tower</a>
-            <a class="map-link" href="https://maps.google.com/?q=De+Garre+Bruges+Belgium" target="_blank">📍 De Garre Bar</a>
-            <a class="map-link" href="https://maps.google.com/?q=The+Chocolate+Line+Bruges+Belgium" target="_blank">📍 The Chocolate Line</a>
+            <a class="map-link" href="https://maps.google.com/?q=Zeebrugge+cruise+terminal+Belgium" target="_blank">Zeebrugge Terminal</a>
+            <a class="map-link" href="https://maps.google.com/?q=Markt+Bruges+Belgium" target="_blank">Bruges Markt</a>
+            <a class="map-link" href="https://maps.google.com/?q=Belfry+of+Bruges+Belgium" target="_blank">Belfry Tower</a>
+            <a class="map-link" href="https://maps.google.com/?q=Torture+Museum+Oude+Steen+Bruges" target="_blank">Torture Museum</a>
+            <a class="map-link" href="https://maps.google.com/?q=De+Garre+Bruges+Belgium" target="_blank">De Garre Bar</a>
+            <a class="map-link" href="https://maps.google.com/?q=The+Chocolate+Line+Bruges+Belgium" target="_blank">The Chocolate Line</a>
           </div>
         </div>
       </div>
@@ -797,22 +804,23 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
       <div class="cruise-day" id="cd4">
         <div class="cruise-day-header" onclick="toggleCD('cd4')">
           <div class="cruise-day-num">4</div>
-          <div class="cruise-day-info"><div class="cruise-day-title">Amsterdam, Netherlands 🇳🇱</div><div class="cruise-day-sub">Sat, Aug 23 · 8 AM–8 PM · Canal Cruise booked 12:30 PM ✓ #1393319767</div></div>
+          <div class="cruise-day-info"><div class="cruise-day-title">Amsterdam, Netherlands 🇳🇱</div><div class="cruise-day-sub">Sun, Aug 23 · 8 AM–8 PM · Coffee Shop Cruise booked 2 PM</div></div>
           <div class="cruise-day-chevron">▼</div>
         </div>
         <div class="cruise-day-body">
           <ul>
-            <li>🛥️ Luxury Canal Cruise at 12:30 PM with unlimited drinks & bites — Viator ref #1393319767</li>
-            <li>🎨 Carolina: Van Gogh Museum — purchase tickets at vangoghmuseum.nl</li>
-            <li>🍺 Gary: Heineken Experience + Rooftop — purchase at heineken.com</li>
+            <li>Smoke-Friendly Coffee Shop Cruise at 2 PM on a luxury boat — Viator ref #1416563247</li>
+            <li>Carolina: Van Gogh Museum — purchase tickets at vangoghmuseum.nl</li>
+            <li>Gary: Heineken Experience + Rooftop — purchase at heineken.com</li>
             <li>Morning: Wander the Jordaan neighbourhood · Stroopwafels at Albert Cuyp market</li>
           </ul>
+          <div class="cd-dining">🍴 <b>Extra Virgin</b> — Dinner 9:30 PM</div>
           <div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:10px;">
-            <a class="map-link" href="https://maps.google.com/?q=Amsterdam+Cruise+Terminal" target="_blank">📍 Amsterdam Cruise Terminal</a>
-            <a class="map-link" href="https://maps.google.com/?q=Van+Gogh+Museum+Amsterdam" target="_blank">📍 Van Gogh Museum</a>
-            <a class="map-link" href="https://maps.google.com/?q=Heineken+Experience+Amsterdam" target="_blank">📍 Heineken Experience</a>
-            <a class="map-link" href="https://maps.google.com/?q=Jordaan+Amsterdam" target="_blank">📍 Jordaan</a>
-            <a class="map-link" href="https://maps.google.com/?q=Albert+Cuyp+Market+Amsterdam" target="_blank">📍 Albert Cuyp Market</a>
+            <a class="map-link" href="https://maps.google.com/?q=Amsterdam+Cruise+Terminal" target="_blank">Amsterdam Cruise Terminal</a>
+            <a class="map-link" href="https://maps.google.com/?q=Van+Gogh+Museum+Amsterdam" target="_blank">Van Gogh Museum</a>
+            <a class="map-link" href="https://maps.google.com/?q=Heineken+Experience+Amsterdam" target="_blank">Heineken Experience</a>
+            <a class="map-link" href="https://maps.google.com/?q=Jordaan+Amsterdam" target="_blank">Jordaan</a>
+            <a class="map-link" href="https://maps.google.com/?q=Albert+Cuyp+Market+Amsterdam" target="_blank">Albert Cuyp Market</a>
           </div>
         </div>
       </div>
@@ -820,21 +828,24 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
       <div class="cruise-day" id="cd5">
         <div class="cruise-day-header" onclick="toggleCD('cd5')">
           <div class="cruise-day-num">5</div>
-          <div class="cruise-day-info"><div class="cruise-day-title">Hamburg, Germany 🇩🇪</div><div class="cruise-day-sub">Sun, Aug 24 · Arrives 6 PM · Overnight in port</div></div>
+          <div class="cruise-day-info"><div class="cruise-day-title">Hamburg, Germany 🇩🇪</div><div class="cruise-day-sub">Mon, Aug 24 · Arrives 6 PM · Overnight in port</div></div>
           <div class="cruise-day-chevron">▼</div>
         </div>
         <div class="cruise-day-body">
           <ul>
             <li>Ship arrives at 6 PM — evening in Hamburg! Head ashore for dinner and a drink</li>
             <li>Elbphilharmonie plaza — stunning free public viewpoint with harbour panoramas</li>
-            <li>🍺 Gary: Altes Mädchen beer garden in the Schanzenviertel</li>
+            <li>Gary: Altes Mädchen beer garden in the Schanzenviertel</li>
             <li>Speicherstadt UNESCO red-brick warehouse district — great for an evening stroll</li>
+            <li>Nightlife (you asked!): the guided St. Pauli pub crawl runs weeknights too — meets 9 PM, free shots + VIP club entry (~$23 pp), a good fit after your 6 PM arrival</li>
+            <li>Lower-key option: self-guided Reeperbahn audio walk (~$8 pp, 60–90 min · Beatles history + red-light district) at your own pace</li>
           </ul>
+          <div class="cd-dining">🍴 <b>The Wake</b> — Brunch 12:30 PM · Dinner ashore in Hamburg</div>
           <div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:10px;">
-            <a class="map-link" href="https://maps.google.com/?q=Hamburg+Cruise+Centre+Steinwerder" target="_blank">📍 Hamburg Cruise Terminal</a>
-            <a class="map-link" href="https://maps.google.com/?q=Elbphilharmonie+Hamburg" target="_blank">📍 Elbphilharmonie</a>
-            <a class="map-link" href="https://maps.google.com/?q=Speicherstadt+Hamburg" target="_blank">📍 Speicherstadt</a>
-            <a class="map-link" href="https://maps.google.com/?q=Altes+Madchen+Hamburg" target="_blank">📍 Altes Mädchen</a>
+            <a class="map-link" href="https://maps.google.com/?q=Hamburg+Cruise+Centre+Steinwerder" target="_blank">Hamburg Cruise Terminal</a>
+            <a class="map-link" href="https://maps.google.com/?q=Elbphilharmonie+Hamburg" target="_blank">Elbphilharmonie</a>
+            <a class="map-link" href="https://maps.google.com/?q=Speicherstadt+Hamburg" target="_blank">Speicherstadt</a>
+            <a class="map-link" href="https://maps.google.com/?q=Altes+Madchen+Hamburg" target="_blank">Altes Mädchen</a>
           </div>
         </div>
       </div>
@@ -842,21 +853,23 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
       <div class="cruise-day" id="cd6">
         <div class="cruise-day-header" onclick="toggleCD('cd6')">
           <div class="cruise-day-num">6</div>
-          <div class="cruise-day-info"><div class="cruise-day-title">Hamburg, Germany 🇩🇪</div><div class="cruise-day-sub">Mon, Aug 25 · Departs 5 PM · Full day ashore</div></div>
+          <div class="cruise-day-info"><div class="cruise-day-title">Hamburg, Germany 🇩🇪</div><div class="cruise-day-sub">Tue, Aug 25 · Departs 5 PM · Lübeck day trip</div></div>
           <div class="cruise-day-chevron">▼</div>
         </div>
         <div class="cruise-day-body">
           <ul>
-            <li>Full day in Hamburg — make the most of the overnight stop!</li>
-            <li>Miniatur Wunderland — world's largest model railway, surprisingly brilliant</li>
-            <li>Lunch at Altona fish market · Try a Franzbrötchen (cinnamon pastry) from any bakery</li>
-            <li>🍺 Gary: Reeperbahn neighbourhood breweries and bars</li>
-            <li>Back aboard before 5 PM departure</li>
+            <li>Lübeck day trip (as we discussed) — UNESCO-listed medieval old town, ~45 min by regional train from Hamburg Hbf</li>
+            <li>Recommended self-guided tour: "Brick Towers, Fallen Bells &amp; Sinners" (~$9 pp, offline, start anytime) — covers the Holstentor, the churches, marzipan at Niederegger, and the Nosferatu salt-warehouse legend</li>
+            <li>Highlights: the Holstentor gate · Café Niederegger marzipan · St. Mary's Church · harbourside Salzspeicher</li>
+            <li>Prefer to stay in Hamburg? Miniatur Wunderland · Altona fish market · Reeperbahn / St. Pauli</li>
+            <li>Head back by ~2:30 PM to be aboard before the 5 PM departure (all aboard 4:30 PM)</li>
           </ul>
+          <div class="cd-dining">🍴 <b>Extra Virgin</b> — Dinner 7:45 PM</div>
           <div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:10px;">
-            <a class="map-link" href="https://maps.google.com/?q=Miniatur+Wunderland+Hamburg" target="_blank">📍 Miniatur Wunderland</a>
-            <a class="map-link" href="https://maps.google.com/?q=Fischmarkt+Hamburg+Altona" target="_blank">📍 Altona Fish Market</a>
-            <a class="map-link" href="https://maps.google.com/?q=Reeperbahn+Hamburg" target="_blank">📍 Reeperbahn</a>
+            <a class="map-link" href="https://maps.google.com/?q=Holstentor+Lubeck+Germany" target="_blank">Lübeck (Holstentor)</a>
+            <a class="map-link" href="https://maps.google.com/?q=Miniatur+Wunderland+Hamburg" target="_blank">Miniatur Wunderland</a>
+            <a class="map-link" href="https://maps.google.com/?q=Fischmarkt+Hamburg+Altona" target="_blank">Altona Fish Market</a>
+            <a class="map-link" href="https://maps.google.com/?q=Reeperbahn+Hamburg" target="_blank">Reeperbahn</a>
           </div>
         </div>
       </div>
@@ -864,7 +877,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
       <div class="cruise-day" id="cd7">
         <div class="cruise-day-header" onclick="toggleCD('cd7')">
           <div class="cruise-day-num">7</div>
-          <div class="cruise-day-info"><div class="cruise-day-title">Final Day at Sea 🌊</div><div class="cruise-day-sub">Tue, Aug 26 · Homeward to Portsmouth</div></div>
+          <div class="cruise-day-info"><div class="cruise-day-title">Final Day at Sea</div><div class="cruise-day-sub">Wed, Aug 26 · Homeward to Portsmouth</div></div>
           <div class="cruise-day-chevron">▼</div>
         </div>
         <div class="cruise-day-body">
@@ -873,6 +886,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
             <li>Pack bags tonight — leave outside cabin before midnight for crew collection</li>
             <li>Set your alarm — Portsmouth arrives 6:30 AM tomorrow</li>
           </ul>
+          <div class="cd-dining">🍴 <b>The Wake</b> — Dinner 7:30 PM</div>
         </div>
       </div>
     </div>
@@ -896,19 +910,26 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
       </div>
       <div class="section-label">Morning · Disembark</div>
       <div class="timeline">
-        <div class="tl-item" data-tags="do">
-          <div class="tl-dot dot-travel"></div>
-          <div class="tl-time">~8 AM</div>
-          <div class="tl-title">Disembark Valiant Lady</div>
-          <div class="tl-desc">Bags left outside cabin the night before are collected by crew. Final breakfast onboard, then head off.</div>
-          <div class="tl-actions"><a class="map-link" href="https://maps.google.com/?q=Portsmouth+Harbour+train+station" target="_blank">📍 Portsmouth Harbour</a><span class="tl-badge tag-do">Things to Do</span></div>
+        <div class="tl-item" data-tags="eat">
+          <div class="tl-dot dot-food"></div>
+          <div class="tl-time">9 AM</div>
+          <div class="tl-title">Brunch: The Wake</div>
+          <div class="tl-desc">Final meal aboard — 9 AM reservation at The Wake before you head off.</div>
+          <div class="tl-actions"><span class="tl-badge tag-eat">Places to Eat</span></div>
         </div>
         <div class="tl-item" data-tags="do">
           <div class="tl-dot dot-travel"></div>
-          <div class="tl-time">~10 AM</div>
+          <div class="tl-time">~9:45 AM</div>
+          <div class="tl-title">Disembark Valiant Lady</div>
+          <div class="tl-desc">You're welcome to carry your own bags off (no need to leave them out for the crew) — head off at your own pace after brunch, any time before the final all-ashore call.</div>
+          <div class="tl-actions"><a class="map-link" href="https://maps.google.com/?q=Portsmouth+Harbour+train+station" target="_blank">Portsmouth Harbour</a><span class="tl-badge tag-do">Things to Do</span></div>
+        </div>
+        <div class="tl-item" data-tags="do">
+          <div class="tl-dot dot-travel"></div>
+          <div class="tl-time">~11 AM</div>
           <div class="tl-title">Train: Portsmouth to London Waterloo</div>
           <div class="tl-desc">Direct train (~1h 45min). Head to The Dixon, Tower Bridge. Drop bags with concierge and explore if the room isn't ready.</div>
-          <div class="tl-actions"><a class="map-link" href="https://maps.google.com/?q=The+Dixon+Tower+Bridge+London" target="_blank">📍 The Dixon Hotel</a><span class="tl-badge tag-do">Things to Do</span></div>
+          <div class="tl-actions"><a class="map-link" href="https://maps.google.com/?q=The+Dixon+Tower+Bridge+London" target="_blank">The Dixon Hotel</a><span class="tl-badge tag-do">Things to Do</span></div>
         </div>
       </div>
       <div class="section-label">Afternoon · Tower Bridge Area</div>
@@ -918,7 +939,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
           <div class="tl-time">~12:30 PM</div>
           <div class="tl-title">Tower Bridge &amp; Tower of London</div>
           <div class="tl-desc">You're staying right next door! Walk across Tower Bridge (free), check out the glass floor walkway. Tower of London for the Crown Jewels — book online.</div>
-          <div class="tl-actions"><a class="map-link" href="https://maps.google.com/?q=Tower+Bridge+London" target="_blank">📍 Tower Bridge</a><span class="tl-badge tag-do">Things to Do</span></div>
+          <div class="tl-actions"><a class="map-link" href="https://maps.google.com/?q=Tower+Bridge+London" target="_blank">Tower Bridge</a><span class="tl-badge tag-do">Things to Do</span></div>
         </div>
         <div class="tl-item" data-tags="eat">
           <div class="tl-dot dot-food"></div>
@@ -927,7 +948,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
           <div class="tl-desc">Riverside terrace on the Thames with iconic Tower Bridge views. Classic British menu — a proper London experience.</div>
           <div class="tl-actions">
             <a class="tl-link" href="https://www.danddlondon.com/restaurants/butlers-wharf-chop-house" target="_blank">Reserve ↗</a>
-            <a class="map-link" href="https://maps.google.com/?q=Butlers+Wharf+Chop+House+London" target="_blank">📍 Map</a>
+            <a class="map-link" href="https://maps.google.com/?q=Butlers+Wharf+Chop+House+London" target="_blank">Map</a>
             <span class="tl-badge tag-eat">Places to Eat</span>
           </div>
         </div>
@@ -938,8 +959,8 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
           <div class="tl-desc">A quick 20-min tube ride to the actual Platform 9¾ with the trolley halfway through the wall. The Harry Potter shop is right there too.</div>
           <div class="tl-actions">
             <a class="tl-link" href="https://www.harrypotterplatform934.com" target="_blank">harrypotterplatform934.com ↗</a>
-            <a class="map-link" href="https://maps.google.com/?q=Platform+9+3/4+Kings+Cross+London" target="_blank">📍 Map</a>
-            <span class="tl-badge tag-hp">For Carolina ⚡</span>
+            <a class="map-link" href="https://maps.google.com/?q=Platform+9+3/4+Kings+Cross+London" target="_blank">Map</a>
+            <span class="tl-badge tag-hp">For Carolina</span>
             <span class="tl-badge tag-do">Things to Do</span>
           </div>
         </div>
@@ -953,8 +974,8 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
           <div class="tl-desc">Option A: Dishoom Shoreditch — Bombay café food, legendary black dal, bacon naan. Option B: Zapote — vibrant Latin American flavours in a lively setting.</div>
           <div class="tl-actions">
             <a class="tl-link" href="https://www.dishoom.com/shoreditch/" target="_blank">dishoom.com ↗</a>
-            <a class="map-link" href="https://maps.google.com/?q=Dishoom+Shoreditch+London" target="_blank">📍 Dishoom</a>
-            <a class="map-link" href="https://maps.app.goo.gl/b3JyNiAUaJbae9rf8" target="_blank">📍 Zapote</a>
+            <a class="map-link" href="https://maps.google.com/?q=Dishoom+Shoreditch+London" target="_blank">Dishoom</a>
+            <a class="map-link" href="https://maps.app.goo.gl/b3JyNiAUaJbae9rf8" target="_blank">Zapote</a>
             <span class="tl-badge tag-eat">Places to Eat</span>
           </div>
         </div>
@@ -965,7 +986,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
           <div class="tl-desc">Ranked among the world's best cocktail bars. Hidden speakeasy in Shoreditch, jazz & swing, theatrical cocktails. Reservations required.</div>
           <div class="tl-actions">
             <a class="tl-link" href="https://barnightjar.com" target="_blank">barnightjar.com ↗</a>
-            <a class="map-link" href="https://maps.google.com/?q=Bar+Nightjar+Shoreditch+London" target="_blank">📍 Map</a>
+            <a class="map-link" href="https://maps.google.com/?q=Bar+Nightjar+Shoreditch+London" target="_blank">Map</a>
             <span class="tl-badge tag-drink">Grab a Drink</span>
           </div>
         </div>
@@ -973,18 +994,18 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
     </div>
     <div class="map-section">
       <div class="map-section-header" onclick="toggleMap('map-d4','mapbtn-d4')">
-        <div class="map-section-title">📍 Day 10 · Tower Bridge & Shoreditch</div>
+        <div class="map-section-title"> Day 10 · Tower Bridge & Shoreditch</div>
         <button class="map-toggle-btn" id="mapbtn-d4">Hide Map</button>
       </div>
       <div class="map-body" id="map-d4">
         <a class="map-open-all" href="https://maps.google.com/maps/dir/Tower+Bridge+London/Butlers+Wharf+London/Kings+Cross+London/Dishoom+Shoreditch/Nightjar+London" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a73e8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg> Open full day route in Google Maps</a>
         <div class="map-pins">
-          <a class="map-pin" href="https://maps.google.com/?q=Tower+Bridge+London" target="_blank"><div class="map-pin-emoji">🗼</div><div class="map-pin-info"><div class="map-pin-name">Tower Bridge</div><div class="map-pin-type">Sightseeing · Things to Do</div></div><div class="map-pin-arrow">↗</div></a>
-          <a class="map-pin" href="https://maps.google.com/?q=Butlers+Wharf+Chop+House+London" target="_blank"><div class="map-pin-emoji">🍽️</div><div class="map-pin-info"><div class="map-pin-name">Butlers Wharf Chop House</div><div class="map-pin-type">Lunch · Places to Eat</div></div><div class="map-pin-arrow">↗</div></a>
-          <a class="map-pin" href="https://maps.google.com/?q=Platform+9+3/4+Kings+Cross+London" target="_blank"><div class="map-pin-emoji">⚡</div><div class="map-pin-info"><div class="map-pin-name">Platform 9¾</div><div class="map-pin-type">For Carolina · Things to Do</div></div><div class="map-pin-arrow">↗</div></a>
-          <a class="map-pin" href="https://maps.google.com/?q=Dishoom+Shoreditch+London" target="_blank"><div class="map-pin-emoji">🍛</div><div class="map-pin-info"><div class="map-pin-name">Dishoom Shoreditch</div><div class="map-pin-type">Dinner A · Places to Eat</div></div><div class="map-pin-arrow">↗</div></a>
-          <a class="map-pin" href="https://maps.app.goo.gl/b3JyNiAUaJbae9rf8" target="_blank"><div class="map-pin-emoji">🌮</div><div class="map-pin-info"><div class="map-pin-name">Zapote</div><div class="map-pin-type">Dinner B · Places to Eat</div></div><div class="map-pin-arrow">↗</div></a>
-          <a class="map-pin" href="https://maps.google.com/?q=Bar+Nightjar+Shoreditch+London" target="_blank"><div class="map-pin-emoji">🍸</div><div class="map-pin-info"><div class="map-pin-name">Nightjar Cocktail Bar</div><div class="map-pin-type">Drinks · Grab a Drink</div></div><div class="map-pin-arrow">↗</div></a>
+          <a class="map-pin" href="https://maps.google.com/?q=Tower+Bridge+London" target="_blank"><div class="map-pin-info"><div class="map-pin-name">Tower Bridge</div><div class="map-pin-type">Sightseeing · Things to Do</div></div><div class="map-pin-arrow">↗</div></a>
+          <a class="map-pin" href="https://maps.google.com/?q=Butlers+Wharf+Chop+House+London" target="_blank"><div class="map-pin-info"><div class="map-pin-name">Butlers Wharf Chop House</div><div class="map-pin-type">Lunch · Places to Eat</div></div><div class="map-pin-arrow">↗</div></a>
+          <a class="map-pin" href="https://maps.google.com/?q=Platform+9+3/4+Kings+Cross+London" target="_blank"><div class="map-pin-info"><div class="map-pin-name">Platform 9¾</div><div class="map-pin-type">For Carolina · Things to Do</div></div><div class="map-pin-arrow">↗</div></a>
+          <a class="map-pin" href="https://maps.google.com/?q=Dishoom+Shoreditch+London" target="_blank"><div class="map-pin-info"><div class="map-pin-name">Dishoom Shoreditch</div><div class="map-pin-type">Dinner A · Places to Eat</div></div><div class="map-pin-arrow">↗</div></a>
+          <a class="map-pin" href="https://maps.app.goo.gl/b3JyNiAUaJbae9rf8" target="_blank"><div class="map-pin-info"><div class="map-pin-name">Zapote</div><div class="map-pin-type">Dinner B · Places to Eat</div></div><div class="map-pin-arrow">↗</div></a>
+          <a class="map-pin" href="https://maps.google.com/?q=Bar+Nightjar+Shoreditch+London" target="_blank"><div class="map-pin-info"><div class="map-pin-name">Nightjar Cocktail Bar</div><div class="map-pin-type">Drinks · Grab a Drink</div></div><div class="map-pin-arrow">↗</div></a>
         </div>
       </div>
     </div>
@@ -1008,7 +1029,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
           <div class="tl-time">9 AM</div>
           <div class="tl-title">Breakfast: Bermondsey Street Coffee</div>
           <div class="tl-desc">Just around the corner from The Dixon — one of London's top specialty coffee shops.</div>
-          <div class="tl-actions"><a class="map-link" href="https://maps.google.com/?q=Bermondsey+Street+Coffee+London" target="_blank">📍 Map</a><span class="tl-badge tag-eat">Places to Eat</span></div>
+          <div class="tl-actions"><a class="map-link" href="https://maps.google.com/?q=Bermondsey+Street+Coffee+London" target="_blank">Map</a><span class="tl-badge tag-eat">Places to Eat</span></div>
         </div>
         <div class="tl-item" data-tags="do carolina">
           <div class="tl-dot dot-hp"></div>
@@ -1016,9 +1037,9 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
           <div class="tl-title">Harry Potter Film Locations Walk</div>
           <div class="tl-desc">Leadenhall Market (Diagon Alley exterior), Australia House (Gringotts Bank), Great Scotland Yard (Ministry of Magic entrance). Free self-guided walk!</div>
           <div class="tl-actions">
-            <a class="map-link" href="https://maps.google.com/?q=Leadenhall+Market+London" target="_blank">📍 Leadenhall</a>
-            <a class="map-link" href="https://maps.google.com/?q=Australia+House+London" target="_blank">📍 Australia House</a>
-            <span class="tl-badge tag-hp">For Carolina ⚡</span>
+            <a class="map-link" href="https://maps.google.com/?q=Leadenhall+Market+London" target="_blank">Leadenhall</a>
+            <a class="map-link" href="https://maps.google.com/?q=Australia+House+London" target="_blank">Australia House</a>
+            <span class="tl-badge tag-hp">For Carolina</span>
             <span class="tl-badge tag-do">Things to Do</span>
           </div>
         </div>
@@ -1029,7 +1050,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
           <div class="tl-desc">10+ craft breweries under the railway arches near London Bridge — all walkable. Brew By Numbers, Fourpure, Anspach & Hobday. A beer lover's paradise.</div>
           <div class="tl-actions">
             <a class="tl-link" href="https://www.bermondseybeermile.co.uk" target="_blank">bermondseybeermile.co.uk ↗</a>
-            <a class="map-link" href="https://maps.google.com/?q=Bermondsey+Beer+Mile+London" target="_blank">📍 Map</a>
+            <a class="map-link" href="https://maps.google.com/?q=Bermondsey+Beer+Mile+London" target="_blank">Map</a>
             <span class="tl-badge tag-gary">For Gary</span>
             <span class="tl-badge tag-drink">Grab a Drink</span>
           </div>
@@ -1044,7 +1065,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
           <div class="tl-desc">The oldest bookshop in the UK (est. 1797). Five floors of beautiful books, rare finds, and signed editions.</div>
           <div class="tl-actions">
             <a class="tl-link" href="https://www.hatchards.co.uk" target="_blank">hatchards.co.uk ↗</a>
-            <a class="map-link" href="https://maps.google.com/?q=Hatchards+Bookshop+Piccadilly+London" target="_blank">📍 Map</a>
+            <a class="map-link" href="https://maps.google.com/?q=Hatchards+Bookshop+Piccadilly+London" target="_blank">Map</a>
             <span class="tl-badge tag-gary">For Gary</span>
             <span class="tl-badge tag-do">Things to Do</span>
           </div>
@@ -1055,8 +1076,8 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
           <div class="tl-title">Covent Garden &amp; Seven Dials Wander</div>
           <div class="tl-desc">Grab a Negroni at one of the outdoor bars, catch a street performer at the Piazza, browse independent boutiques in Seven Dials. Perfect golden-hour stroll before dinner.</div>
           <div class="tl-actions">
-            <a class="map-link" href="https://maps.google.com/?q=Covent+Garden+London" target="_blank">📍 Covent Garden</a>
-            <a class="map-link" href="https://maps.google.com/?q=Seven+Dials+London" target="_blank">📍 Seven Dials</a>
+            <a class="map-link" href="https://maps.google.com/?q=Covent+Garden+London" target="_blank">Covent Garden</a>
+            <a class="map-link" href="https://maps.google.com/?q=Seven+Dials+London" target="_blank">Seven Dials</a>
             <span class="tl-badge tag-gary">For Gary</span>
             <span class="tl-badge tag-do">Things to Do</span>
           </div>
@@ -1069,7 +1090,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
           <div class="tl-time">7 PM</div>
           <div class="tl-title">Sunset: Tate Modern Terrace</div>
           <div class="tl-desc">Free entry. Top-floor viewing terrace — St Paul's, the City, Southwark Bridge glowing at golden hour. One of the best free views in all of London.</div>
-          <div class="tl-actions"><a class="map-link" href="https://maps.google.com/?q=Tate+Modern+London" target="_blank">📍 Tate Modern</a><span class="tl-badge tag-do">Things to Do</span></div>
+          <div class="tl-actions"><a class="map-link" href="https://maps.google.com/?q=Tate+Modern+London" target="_blank">Tate Modern</a><span class="tl-badge tag-do">Things to Do</span></div>
         </div>
         <div class="tl-item" data-tags="eat">
           <div class="tl-dot dot-food"></div>
@@ -1078,7 +1099,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
           <div class="tl-desc">One of London's most celebrated restaurants — wood-fire cooking, Basque-inspired, unforgettable turbot and beef. Book well in advance.</div>
           <div class="tl-actions">
             <a class="tl-link" href="https://bratrestaurant.com" target="_blank">bratrestaurant.com ↗</a>
-            <a class="map-link" href="https://maps.google.com/?q=Brat+Restaurant+Shoreditch+London" target="_blank">📍 Map</a>
+            <a class="map-link" href="https://maps.google.com/?q=Brat+Restaurant+Shoreditch+London" target="_blank">Map</a>
             <span class="tl-badge tag-eat">Places to Eat</span>
           </div>
         </div>
@@ -1089,12 +1110,12 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
           <div class="tl-desc">360° London views from a sky-high garden, open until midnight — and free to visit. Book in advance at skygarden.london.</div>
           <div class="tl-actions">
             <a class="tl-link" href="https://skygarden.london" target="_blank">skygarden.london ↗</a>
-            <a class="map-link" href="https://maps.google.com/?q=Sky+Garden+London" target="_blank">📍 Map</a>
+            <a class="map-link" href="https://maps.google.com/?q=Sky+Garden+London" target="_blank">Map</a>
             <span class="tl-badge tag-drink">Grab a Drink</span>
           </div>
         </div>
       </div>
-      <div class="tip-box"><strong>🧳 Pack tonight!</strong> Flight VS4029 departs Heathrow at 4:20 PM tomorrow. Check out by 1 PM. Online check-in opens on the Delta app at 4:20 PM today!</div>
+      <div class="tip-box"><strong>Pack tonight!</strong> Flight VS4029 departs Heathrow at 4:20 PM tomorrow. Check out by 1 PM. Online check-in opens on the Delta app at 4:20 PM today!</div>
     </div>
     <div class="map-section">
       <div class="map-section-header" onclick="toggleMap('map-d5','mapbtn-d5')">
@@ -1104,13 +1125,13 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
       <div class="map-body" id="map-d5">
         <a class="map-open-all" href="https://maps.google.com/maps/dir/Leadenhall+Market+London/Bermondsey+Beer+Mile/Hatchards+Piccadilly/Tate+Modern+London/Brat+Restaurant+Shoreditch/Sky+Garden+London" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a73e8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg> Open full day route in Google Maps</a>
         <div class="map-pins">
-          <a class="map-pin" href="https://maps.google.com/?q=Leadenhall+Market+London" target="_blank"><div class="map-pin-emoji">⚡</div><div class="map-pin-info"><div class="map-pin-name">Leadenhall Market</div><div class="map-pin-type">HP Diagon Alley · For Carolina</div></div><div class="map-pin-arrow">↗</div></a>
-          <a class="map-pin" href="https://maps.google.com/?q=Bermondsey+Beer+Mile+London" target="_blank"><div class="map-pin-emoji">🍺</div><div class="map-pin-info"><div class="map-pin-name">Bermondsey Beer Mile</div><div class="map-pin-type">For Gary · Grab a Drink</div></div><div class="map-pin-arrow">↗</div></a>
-          <a class="map-pin" href="https://maps.google.com/?q=Hatchards+Bookshop+Piccadilly+London" target="_blank"><div class="map-pin-emoji">📚</div><div class="map-pin-info"><div class="map-pin-name">Hatchards Bookshop</div><div class="map-pin-type">For Gary · est. 1797</div></div><div class="map-pin-arrow">↗</div></a>
-          <a class="map-pin" href="https://maps.google.com/?q=Covent+Garden+London" target="_blank"><div class="map-pin-emoji">🎭</div><div class="map-pin-info"><div class="map-pin-name">Covent Garden</div><div class="map-pin-type">For Gary · Things to Do</div></div><div class="map-pin-arrow">↗</div></a>
-          <a class="map-pin" href="https://maps.google.com/?q=Tate+Modern+London" target="_blank"><div class="map-pin-emoji">🌅</div><div class="map-pin-info"><div class="map-pin-name">Tate Modern Terrace</div><div class="map-pin-type">Sunset views · Free</div></div><div class="map-pin-arrow">↗</div></a>
-          <a class="map-pin" href="https://maps.google.com/?q=Brat+Restaurant+Shoreditch+London" target="_blank"><div class="map-pin-emoji">🔥</div><div class="map-pin-info"><div class="map-pin-name">Brat Restaurant</div><div class="map-pin-type">Farewell dinner · Places to Eat</div></div><div class="map-pin-arrow">↗</div></a>
-          <a class="map-pin" href="https://maps.google.com/?q=Sky+Garden+London" target="_blank"><div class="map-pin-emoji">🌃</div><div class="map-pin-info"><div class="map-pin-name">Sky Garden</div><div class="map-pin-type">Final nightcap · Free</div></div><div class="map-pin-arrow">↗</div></a>
+          <a class="map-pin" href="https://maps.google.com/?q=Leadenhall+Market+London" target="_blank"><div class="map-pin-info"><div class="map-pin-name">Leadenhall Market</div><div class="map-pin-type">HP Diagon Alley · For Carolina</div></div><div class="map-pin-arrow">↗</div></a>
+          <a class="map-pin" href="https://maps.google.com/?q=Bermondsey+Beer+Mile+London" target="_blank"><div class="map-pin-info"><div class="map-pin-name">Bermondsey Beer Mile</div><div class="map-pin-type">For Gary · Grab a Drink</div></div><div class="map-pin-arrow">↗</div></a>
+          <a class="map-pin" href="https://maps.google.com/?q=Hatchards+Bookshop+Piccadilly+London" target="_blank"><div class="map-pin-info"><div class="map-pin-name">Hatchards Bookshop</div><div class="map-pin-type">For Gary · est. 1797</div></div><div class="map-pin-arrow">↗</div></a>
+          <a class="map-pin" href="https://maps.google.com/?q=Covent+Garden+London" target="_blank"><div class="map-pin-info"><div class="map-pin-name">Covent Garden</div><div class="map-pin-type">For Gary · Things to Do</div></div><div class="map-pin-arrow">↗</div></a>
+          <a class="map-pin" href="https://maps.google.com/?q=Tate+Modern+London" target="_blank"><div class="map-pin-info"><div class="map-pin-name">Tate Modern Terrace</div><div class="map-pin-type">Sunset views · Free</div></div><div class="map-pin-arrow">↗</div></a>
+          <a class="map-pin" href="https://maps.google.com/?q=Brat+Restaurant+Shoreditch+London" target="_blank"><div class="map-pin-info"><div class="map-pin-name">Brat Restaurant</div><div class="map-pin-type">Farewell dinner · Places to Eat</div></div><div class="map-pin-arrow">↗</div></a>
+          <a class="map-pin" href="https://maps.google.com/?q=Sky+Garden+London" target="_blank"><div class="map-pin-info"><div class="map-pin-name">Sky Garden</div><div class="map-pin-type">Final nightcap · Free</div></div><div class="map-pin-arrow">↗</div></a>
         </div>
       </div>
     </div>
@@ -1133,31 +1154,31 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
           <div class="tl-time">9 AM</div>
           <div class="tl-title">Hotel Check-out &amp; Last London Breakfast</div>
           <div class="tl-desc">Check out from The Dixon by 11 AM. Final full English breakfast at The Table café on Southwark Street nearby.</div>
-          <div class="tl-actions"><a class="map-link" href="https://maps.google.com/?q=The+Table+Cafe+Southwark+London" target="_blank">📍 The Table Café</a><span class="tl-badge tag-eat">Places to Eat</span></div>
+          <div class="tl-actions"><a class="map-link" href="https://maps.google.com/?q=The+Table+Cafe+Southwark+London" target="_blank">The Table Café</a><span class="tl-badge tag-eat">Places to Eat</span></div>
         </div>
         <div class="tl-item" data-tags="do">
           <div class="tl-dot dot-sight"></div>
           <div class="tl-time">10 AM</div>
           <div class="tl-title">Morning Stroll: Southwark &amp; Borough</div>
           <div class="tl-desc">One last wander through Borough Market, across London Bridge, look back at The Shard. Soak it all in!</div>
-          <div class="tl-actions"><a class="map-link" href="https://maps.google.com/?q=London+Bridge+London" target="_blank">📍 London Bridge</a><span class="tl-badge tag-do">Things to Do</span></div>
+          <div class="tl-actions"><a class="map-link" href="https://maps.google.com/?q=London+Bridge+London" target="_blank">London Bridge</a><span class="tl-badge tag-do">Things to Do</span></div>
         </div>
         <div class="tl-item" data-tags="do">
           <div class="tl-dot dot-travel"></div>
           <div class="tl-time">12:30 PM</div>
           <div class="tl-title">Head to Heathrow</div>
           <div class="tl-desc">Jubilee or Piccadilly line to Heathrow. Allow 60–75 minutes. Aim to arrive at the airport by 1:30 PM.</div>
-          <div class="tl-actions"><a class="map-link" href="https://maps.google.com/?q=London+Bridge+tube+station" target="_blank">📍 London Bridge Station</a><span class="tl-badge tag-do">Things to Do</span></div>
+          <div class="tl-actions"><a class="map-link" href="https://maps.google.com/?q=London+Bridge+tube+station" target="_blank">London Bridge Station</a><span class="tl-badge tag-do">Things to Do</span></div>
         </div>
         <div class="tl-item" data-tags="do">
           <div class="tl-dot dot-travel"></div>
           <div class="tl-time">4:20 PM</div>
           <div class="tl-title">VS4029 Departs Heathrow</div>
-          <div class="tl-desc">Direct to JFK, landing 7:45 PM · Welcome home!. Safe travels, Carolina & Gary — you've earned every single memory of this incredible trip! 🥂</div>
-          <div class="tl-actions"><a class="map-link" href="https://maps.google.com/?q=Heathrow+Airport" target="_blank">📍 Heathrow Airport</a></div>
+          <div class="tl-desc">Direct to JFK, landing 7:45 PM · Welcome home!. Safe travels, Carolina & Gary — you've earned every single memory of this incredible trip!</div>
+          <div class="tl-actions"><a class="map-link" href="https://maps.google.com/?q=Heathrow+Airport" target="_blank">Heathrow Airport</a></div>
         </div>
       </div>
-      <div class="tip-box"><strong>🛡️ Insurance reminder:</strong> Plan #260314RTL0713 covers you through today. 24/7 emergency line available.</div>
+      <div class="tip-box"><strong>Insurance reminder:</strong> Plan #260314RTL0713 covers you through today. 24/7 emergency line available.</div>
     </div>
 </div>
 </div>
@@ -1195,17 +1216,17 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
     <div style="padding:1.2rem 0 0;">
       <div class="info-card-label" style="font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:2px;color:var(--text-muted);margin-bottom:12px;">Confirmed Experiences · Via Viator</div>
 
-      <div class="book-card"><div class="book-icon" style="font-size:18px;">🔍</div><div class="book-info"><div class="book-name">SHERLOCKTRAIL: A Sherlock Holmes Mystery</div><div class="book-detail">Self-Guided Walk · Aug 18, 2026 · Viator</div></div><div class="book-conf" style="color:var(--crimson);">#1369291137</div></div>
-      <div class="book-card"><div class="book-icon" style="font-size:18px;">⚡</div><div class="book-info"><div class="book-name">Original Harry Potter Tour — London with Boat Ride</div><div class="book-detail">Guided Tour · Aug 18, 2026 · 7:00 PM · Viator</div></div><div class="book-conf" style="color:var(--crimson);">#1366333643</div></div>
-      <div class="book-card"><div class="book-icon" style="font-size:18px;">🚌</div><div class="book-info"><div class="book-name">Round-Trip Shuttle: Zeebrugge to Bruges</div><div class="book-detail">Aug 22, 2026 · Cruise Port · Viator</div></div><div class="book-conf" style="color:var(--crimson);">#1393316569</div></div>
-      <div class="book-card"><div class="book-icon" style="font-size:18px;">🛥️</div><div class="book-info"><div class="book-name">Amsterdam Luxury Canal Cruise + Unlimited Drinks & Bites</div><div class="book-detail">Aug 23, 2026 · 12:30 PM · Viator</div></div><div class="book-conf" style="color:var(--crimson);">#1393319767</div></div>
+      <div class="book-card"><div class="book-info"><div class="book-name">SHERLOCKTRAIL: A Sherlock Holmes Mystery</div><div class="book-detail">Self-Guided Walk · Aug 18, 2026 · Viator</div></div><div class="book-conf" style="color:var(--crimson);">#1369291137</div></div>
+      <div class="book-card"><div class="book-info"><div class="book-name">Original Harry Potter Tour — London with Boat Ride</div><div class="book-detail">Guided Tour · Aug 18, 2026 · 7:00 PM · Viator</div></div><div class="book-conf" style="color:var(--crimson);">#1366333643</div></div>
+      <div class="book-card"><div class="book-info"><div class="book-name">Round-Trip Shuttle: Zeebrugge to Bruges</div><div class="book-detail">Aug 22, 2026 · Cruise Port · Viator</div></div><div class="book-conf" style="color:var(--crimson);">#1393316569</div></div>
+      <div class="book-card"><div class="book-info"><div class="book-name">Amsterdam Smoke-Friendly Coffee Shop Cruise</div><div class="book-detail">Aug 23, 2026 · 2:00 PM · Luxury Boat · Viator</div></div><div class="book-conf" style="color:var(--crimson);">#1416563247</div></div>
 
       <div style="margin-top:16px;" class="info-card-label" style="font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:2px;color:var(--text-muted);margin-bottom:12px;">Purchasing Directly from Venue</div>
 
-      <div class="book-card"><div class="book-icon" style="font-size:18px;">🍺</div><div class="book-info"><div class="book-name">Heineken Experience Tour + Rooftop</div><div class="book-detail">Aug 23, 2026 · Amsterdam · Purchase at heineken.com</div></div><div class="book-conf" style="color:var(--text-muted);">Buy Direct</div></div>
-      <div class="book-card"><div class="book-icon" style="font-size:18px;">🎨</div><div class="book-info"><div class="book-name">Van Gogh Museum</div><div class="book-detail">Aug 23, 2026 · Amsterdam · Purchase at vangoghmuseum.nl</div></div><div class="book-conf" style="color:var(--text-muted);">Buy Direct</div></div>
+      <div class="book-card"><div class="book-info"><div class="book-name">Heineken Experience Tour + Rooftop</div><div class="book-detail">Aug 23, 2026 · Amsterdam · Purchase at heineken.com</div></div><div class="book-conf" style="color:var(--text-muted);">Buy Direct</div></div>
+      <div class="book-card"><div class="book-info"><div class="book-name">Van Gogh Museum</div><div class="book-detail">Aug 23, 2026 · Amsterdam · Purchase at vangoghmuseum.nl</div></div><div class="book-conf" style="color:var(--text-muted);">Buy Direct</div></div>
 
-      <div class="tip-box" style="margin-top:12px;"><strong>Note:</strong> All Viator bookings include the reference numbers above. Travel insurance info and flight details were forwarded separately — reach out if you need them resent.</div>
+      <div class="tip-box" style="margin-top:12px;"><strong>Note:</strong> Reference numbers are listed above. Insurance and flight details were sent separately — just ask if you'd like them resent.</div>
     </div>
   </div>
   <div class="info-sub-panel" id="isub-flights">
@@ -1213,7 +1234,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
       <div class="flight-num">Flight 1 of 2 · VS4000 &nbsp;<span class="ref-pill">DSJHZP</span></div>
       <div class="flight-route">
         <div class="flight-airport"><div class="flight-iata">JFK</div><div class="flight-time">8:15 PM</div><div class="flight-date-tag">Aug 17</div></div>
-        <div class="flight-mid"><div class="f-line-wrap"><div class="f-line"></div><div class="f-plane">✈️</div><div class="f-line"></div></div><div class="flight-tag">Direct · Operated by Delta</div></div>
+        <div class="flight-mid"><div class="f-line-wrap"><div class="f-line"></div><div class="f-plane">→</div><div class="f-line"></div></div><div class="flight-tag">Direct · Operated by Delta</div></div>
         <div class="flight-airport" style="text-align:right;"><div class="flight-iata">LHR</div><div class="flight-time">8:50 AM</div><div class="flight-date-tag">Aug 18 (+1)</div></div>
       </div>
     </div>
@@ -1221,7 +1242,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
       <div class="flight-num">Flight 2 of 2 · VS4029 &nbsp;<span class="ref-pill">DSJHZP</span></div>
       <div class="flight-route">
         <div class="flight-airport"><div class="flight-iata">LHR</div><div class="flight-time">4:20 PM</div><div class="flight-date-tag">Aug 29</div></div>
-        <div class="flight-mid"><div class="f-line-wrap"><div class="f-line"></div><div class="f-plane">✈️</div><div class="f-line"></div></div><div class="flight-tag">Direct · Operated by Delta</div></div>
+        <div class="flight-mid"><div class="f-line-wrap"><div class="f-line"></div><div class="f-plane">→</div><div class="f-line"></div></div><div class="flight-tag">Direct · Operated by Delta</div></div>
         <div class="flight-airport" style="text-align:right;"><div class="flight-iata">JFK</div><div class="flight-time">7:45 PM</div><div class="flight-date-tag">Aug 29</div></div>
       </div>
     </div>
@@ -1233,7 +1254,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
       <div class="info-row"><span class="info-key">Booking Ref</span><span class="info-val red">DSJHZP</span></div>
       <div class="info-row"><span class="info-key">Travelers</span><span class="info-val">Carolina Sanchez · Gary B Rosario</span></div>
     </div>
-    <div class="delta-tip"><span style="font-size:18px;flex-shrink:0;">📱</span><div><strong>Download the Delta app before you fly!</strong> Check in, get your mobile boarding pass, track bags, and receive real-time flight updates. Check-in opens 24 hours before each departure — set a reminder!</div></div>
+    <div class="delta-tip"><span style="font-size:18px;flex-shrink:0;"></span><div><strong>Download the Delta app before you fly!</strong> Check in, get your mobile boarding pass, track bags, and receive real-time flight updates. Check-in opens 24 hours before each departure — set a reminder!</div></div>
   </div>
   <div class="info-sub-panel" id="isub-insurance">
     <div class="ins-grid">
@@ -1256,55 +1277,55 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
         </div>
       </div>
     </div>
-    <div class="green-tip" style="margin-top:10px;"><span style="font-size:18px;flex-shrink:0;">🛡️</span><div><strong>Save Plan #260314RTL0713 in both your phones.</strong> Travel Insured International has a 24/7 emergency line. You're covered across all four destinations — UK, Belgium, Netherlands, and Germany.</div></div>
+    <div class="green-tip" style="margin-top:10px;"><span style="font-size:18px;flex-shrink:0;"></span><div><strong>Save Plan #260314RTL0713 in both your phones.</strong> Travel Insured International has a 24/7 emergency line. You're covered across all four destinations — UK, Belgium, Netherlands, and Germany.</div></div>
 
     <!-- HOW TO FILE A CLAIM -->
     <div class="claim-card">
-      <div class="claim-title">📋 How to File a Claim</div>
+      <div class="claim-title"> How to File a Claim</div>
       <div class="claim-row">
-        <div class="claim-icon">📞</div>
+        <div class="claim-icon"></div>
         <div class="claim-info">
           <strong>Call Claims Team</strong>
           <div class="claim-sub">855-752-8303 · Monday–Friday, 8 AM–6 PM ET</div>
         </div>
       </div>
       <div class="claim-row">
-        <div class="claim-icon">✉️</div>
+        <div class="claim-icon"></div>
         <div class="claim-info">
           <strong>Email</strong>
           <div class="claim-sub"><a href="/cdn-cgi/l/email-protection#2d4e414c44405e6d595f4c5b484144435e585f4849034e4240" style="color:var(--crimson);"><span class="__cf_email__" data-cfemail="ff9c939e96928cbf8b8d9e899a9396918c8a8d9a9bd19c9092">[email&#160;protected]</span></a></div>
         </div>
       </div>
       <div class="claim-row">
-        <div class="claim-icon">🌐</div>
+        <div class="claim-icon"></div>
         <div class="claim-info">
           <strong>Online Claims Portal</strong>
           <div class="claim-sub"><a href="https://www.travelinsured.com/about-us/infographics/customer-claims-process/" target="_blank" style="color:var(--crimson);">travelinsured.com → Customer Claims Process ↗</a></div>
         </div>
       </div>
       <div class="claim-row">
-        <div class="claim-icon">🆘</div>
+        <div class="claim-icon"></div>
         <div class="claim-info">
           <strong>24/7 Emergency (Robin Assist)</strong>
           <div class="claim-sub">Medical evacuation, prescription replacement, concierge support — available anytime, anywhere</div>
         </div>
       </div>
     </div>
-    <div class="tip-box" style="margin-bottom:0;"><strong>💡 Quick &amp; Simple Claims:</strong> Submit everything online in one place and track your claim in real time. Their team is ready to help at each step — travel protection is about being confident, not just cautious.</div>
+    <div class="tip-box" style="margin-bottom:0;"><strong>Quick &amp; Simple Claims:</strong> Submit everything online in one place and track your claim in real time. Their team is ready to help at each step — travel protection is about being confident, not just cautious.</div>
   </div>
 
 
 <div class="info-sub-panel" id="isub-bookings">
-    <div class="book-card"><div class="book-icon">✈️</div><div class="book-info"><div class="book-name">Virgin Atlantic · VS4000 & VS4029</div><div class="book-detail">JFK→LHR Aug 17 · LHR→JFK Aug 29 · Delta Basic Economy</div></div><div class="book-conf">DSJHZP</div></div>
-    <div class="book-card"><div class="book-icon">🛡️</div><div class="book-info"><div class="book-name">Travel Insured International</div><div class="book-detail">Worldwide Trip Protector · Aug 17–29 · Both travelers</div></div><div class="book-conf">260314RTL0713</div></div>
-    <div class="book-card"><div class="book-icon">🏨</div><div class="book-info"><div class="book-name">CitizenM London Victoria Station</div><div class="book-detail">Check-in · Aug 17 — room reserved for early arrival · 1 Room · 2 Guests</div></div><a class="book-link" href="https://app.marriott.com/Nt2WFoS3b0b" target="_blank">View ↗</a></div>
-    <div class="book-card"><div class="book-icon">🏨</div><div class="book-info"><div class="book-name">Portsmouth Marriott Hotel</div><div class="book-detail">Check-in · Aug 19–20 · 1 Room · 2 Guests</div></div><a class="book-link" href="https://app.marriott.com/BwOoZITCp0b" target="_blank">View ↗</a></div>
-    <div class="book-card"><div class="book-icon">🚢</div><div class="book-info"><div class="book-name">Virgin Voyages · Valiant Lady</div><div class="book-detail">Canals & Cobblestones · Aug 20–27 · 7 Nights</div></div><div class="book-conf">VV Conf.</div></div>
-    <div class="book-card"><div class="book-icon">🏨</div><div class="book-info"><div class="book-name">The Dixon, Tower Bridge — Autograph Collection</div><div class="book-detail">Check-in · Aug 27–29 · 1 Room · 2 Guests</div></div><a class="book-link" href="https://www.marriott.com/en-us/hotels/londx-the-dixon-tower-bridge-autograph-collection/overview/" target="_blank">View ↗</a></div>
-    <div class="book-card"><div class="book-icon">🔍</div><div class="book-info"><div class="book-name">SHERLOCKTRAIL: A Sherlock Holmes Mystery</div><div class="book-detail">Self-Guided Walk · Aug 18 · Viator</div></div><div class="book-conf" style="color:var(--crimson);">#1369291137</div></div>
-    <div class="book-card"><div class="book-icon">⚡</div><div class="book-info"><div class="book-name">Original Harry Potter Tour + Boat Ride</div><div class="book-detail">Guided Tour · Aug 18 · 7:00 PM · Viator</div></div><div class="book-conf" style="color:var(--crimson);">#1366333643</div></div>
-    <div class="book-card"><div class="book-icon">🚌</div><div class="book-info"><div class="book-name">Round-Trip Shuttle: Zeebrugge to Bruges</div><div class="book-detail">Aug 22 · Cruise Port · Viator</div></div><div class="book-conf" style="color:var(--crimson);">#1393316569</div></div>
-    <div class="book-card"><div class="book-icon">🛥️</div><div class="book-info"><div class="book-name">Amsterdam Luxury Canal Cruise + Drinks & Bites</div><div class="book-detail">Aug 23 · 12:30 PM · Viator</div></div><div class="book-conf" style="color:var(--crimson);">#1393319767</div></div>
+    <div class="book-card"><div class="book-info"><div class="book-name">Virgin Atlantic · VS4000 & VS4029</div><div class="book-detail">JFK→LHR Aug 17 · LHR→JFK Aug 29 · Delta Basic Economy</div></div><div class="book-conf">DSJHZP</div></div>
+    <div class="book-card"><div class="book-info"><div class="book-name">Travel Insured International</div><div class="book-detail">Worldwide Trip Protector · Aug 17–29 · Both travelers</div></div><div class="book-conf">260314RTL0713</div></div>
+    <div class="book-card"><div class="book-info"><div class="book-name">CitizenM London Victoria Station</div><div class="book-detail">Check-in · Aug 17 — room reserved for early arrival · 1 Room · 2 Guests</div></div><a class="book-link" href="https://app.marriott.com/Nt2WFoS3b0b" target="_blank">View ↗</a></div>
+    <div class="book-card"><div class="book-info"><div class="book-name">Portsmouth Marriott Hotel</div><div class="book-detail">Check-in · Aug 19–20 · 1 Room · 2 Guests</div></div><a class="book-link" href="https://app.marriott.com/BwOoZITCp0b" target="_blank">View ↗</a></div>
+    <div class="book-card"><div class="book-info"><div class="book-name">Virgin Voyages · Valiant Lady</div><div class="book-detail">Canals & Cobblestones · Aug 20–27 · 7 Nights</div></div><div class="book-conf">VV Conf.</div></div>
+    <div class="book-card"><div class="book-info"><div class="book-name">The Dixon, Tower Bridge — Autograph Collection</div><div class="book-detail">Check-in · Aug 27–29 · 1 Room · 2 Guests</div></div><a class="book-link" href="https://www.marriott.com/en-us/hotels/londx-the-dixon-tower-bridge-autograph-collection/overview/" target="_blank">View ↗</a></div>
+    <div class="book-card"><div class="book-info"><div class="book-name">SHERLOCKTRAIL: A Sherlock Holmes Mystery</div><div class="book-detail">Self-Guided Walk · Aug 18 · Viator</div></div><div class="book-conf" style="color:var(--crimson);">#1369291137</div></div>
+    <div class="book-card"><div class="book-info"><div class="book-name">Original Harry Potter Tour + Boat Ride</div><div class="book-detail">Guided Tour · Aug 18 · 7:00 PM · Viator</div></div><div class="book-conf" style="color:var(--crimson);">#1366333643</div></div>
+    <div class="book-card"><div class="book-info"><div class="book-name">Round-Trip Shuttle: Zeebrugge to Bruges</div><div class="book-detail">Aug 22 · Cruise Port · Viator</div></div><div class="book-conf" style="color:var(--crimson);">#1393316569</div></div>
+    <div class="book-card"><div class="book-info"><div class="book-name">Amsterdam Smoke-Friendly Coffee Shop Cruise</div><div class="book-detail">Aug 23 · 2:00 PM · Luxury Boat · Viator</div></div><div class="book-conf" style="color:var(--crimson);">#1416563247</div></div>
 </div>
 </div>
 
@@ -1313,7 +1334,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
   <div style="padding:1rem 1.4rem 0;">
     <!-- HERO -->
     <div class="vv-hero">
-      <div class="vv-hero-title">Virgin Voyages: Comedy Fest from the UK ⚓</div>
+      <div class="vv-hero-title">Virgin Voyages: Comedy Fest from the UK</div>
       <div class="vv-hero-sub">7 Nights · Aug 20–27, 2026 · Valiant Lady · Cabin 12 078Z — Deck 12 Mid · The Sea Terrace</div>
       <div class="vv-route">
         <span class="vv-route-stop">🏴󠁧󠁢󠁥󠁮󠁧󠁿 Portsmouth</span>
@@ -1342,19 +1363,19 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
   <div class="vv-sub-panel active" id="vv-overview">
     <!-- SAIL SCHEDULE -->
     <div class="vv-block">
-      <div class="vv-block-title"><span></span> Official Sail Schedule</div>
+      <div class="vv-block-title">Official Sail Schedule</div>
       <div class="schedule-row">
         <div class="sched-day">1</div>
         <div class="sched-info">
           <div class="sched-port">🏴󠁧󠁢󠁥󠁮󠁧󠁿 Portsmouth, United Kingdom</div>
           <div class="sched-time">Departs 6:00 PM local time</div>
-          <div class="sched-note">📣 All aboard 2 hrs before departure (4:00 PM)</div>
+          <div class="sched-note"> All aboard 2 hrs before departure (4:00 PM)</div>
         </div>
       </div>
       <div class="schedule-row">
         <div class="sched-day">2</div>
         <div class="sched-info">
-          <div class="sched-port">🌊 Day at Sea</div>
+          <div class="sched-port"> Day at Sea</div>
           <div class="sched-time">North Sea crossing</div>
         </div>
       </div>
@@ -1391,7 +1412,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
       <div class="schedule-row">
         <div class="sched-day">7</div>
         <div class="sched-info">
-          <div class="sched-port">🌊 Day at Sea</div>
+          <div class="sched-port"> Day at Sea</div>
           <div class="sched-time">Sailing homeward</div>
         </div>
       </div>
@@ -1400,13 +1421,13 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
         <div class="sched-info">
           <div class="sched-port">🏴󠁧󠁢󠁥󠁮󠁧󠁿 Portsmouth, United Kingdom</div>
           <div class="sched-time">Arrives 6:30 AM local time</div>
-          <div class="sched-note">📣 Allow up to 1 hour for gangway to open to disembark</div>
+          <div class="sched-note"> Allow up to 1 hour for gangway to open to disembark</div>
         </div>
       </div>
     </div>
     <!-- EMBARKATION -->
     <div class="vv-block">
-      <div class="vv-block-title"><span>⚓</span> Get Ready for Embarkation</div>
+      <div class="vv-block-title">Get Ready for Embarkation</div>
       <div class="vv-detail-row"><span class="vv-detail-key">Port location</span><span class="vv-detail-val">Portsmouth, United Kingdom</span></div>
       <div class="vv-detail-row"><span class="vv-detail-key">Boarding pass</span><span class="vv-detail-val">Complete Ready To Sail in the Sailor app</span></div>
       <div class="vv-detail-row"><span class="vv-detail-key">Terminal arrival</span><span class="vv-detail-val crimson">1:45 PM – 4:00 PM only</span></div>
@@ -1415,26 +1436,26 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
     </div>
     <!-- BOOK YOUR VOYAGE -->
     <div class="vv-block">
-      <div class="vv-block-title"><span>📅</span> Plan & Book Your Voyage Activities</div>
-      <div class="red-tip" style="margin-bottom:10px;"><span style="font-size:16px;flex-shrink:0;">📱</span><div style="font-size:11px;">All bookings are made through the <strong>Virgin Voyages Sailor app</strong> — download it before boarding. No external links needed!</div></div>
+      <div class="vv-block-title">Plan & Book Your Voyage Activities</div>
+      <div class="red-tip" style="margin-bottom:10px;"><div style="font-size:11px;">All bookings are made through the <strong>Virgin Voyages Sailor app</strong> — download it before boarding. No external links needed!</div></div>
       <div class="booking-opens-grid">
         <div class="booking-opens-card">
-          <div class="bo-label">🍽️ Restaurants</div>
+          <div class="bo-label"> Restaurants</div>
           <div class="bo-name">All dining reservations</div>
           <div class="bo-date">Opens June 21, 2026</div>
         </div>
         <div class="booking-opens-card">
-          <div class="bo-label">🌍 Shore Things</div>
+          <div class="bo-label"> Shore Things</div>
           <div class="bo-name">Excursions & tours</div>
           <div class="bo-date">Opens April 22, 2026</div>
         </div>
         <div class="booking-opens-card">
-          <div class="bo-label">🎭 Event Line-Up</div>
+          <div class="bo-label"> Event Line-Up</div>
           <div class="bo-name">Shows & entertainment</div>
           <div class="bo-date">Book via Sailor app</div>
         </div>
         <div class="booking-opens-card">
-          <div class="bo-label">💆 Spa</div>
+          <div class="bo-label"> Spa</div>
           <div class="bo-name">Redemption Spa treatments</div>
           <div class="bo-date">Book on embarkation day</div>
         </div>
@@ -1448,7 +1469,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
     <div class="cabin-card">
       <img class="cabin-img" src="Sea_Terrace.png" alt="Sea Terrace Cabin" onerror="this.style.display='none'">
       <div class="cabin-body">
-        <div class="cabin-title">🛏️ Your Cabin — The Sea Terrace</div>
+        <div class="cabin-title"> Your Cabin — The Sea Terrace</div>
         <div class="cabin-sub">Cabin 12 078Z · Deck 12 Mid · Private terrace with ocean views</div>
         <div style="margin-top:8px;">
           <div class="vv-detail-row"><span class="vv-detail-key">Cabin</span><span class="vv-detail-val">12 078Z · Deck 12 Mid</span></div>
@@ -1465,57 +1486,63 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
   <div class="vv-sub-panel" id="vv-dining">
     <!-- DINING -->
     <div class="vv-block">
-      <div class="vv-block-title"><span>🍽️</span> Onboard Specialty Dining — All Included</div>
-      <div class="red-tip" style="margin-bottom:10px;"><span style="font-size:16px;flex-shrink:0;">📱</span>
-        <div style="font-size:11px;"><strong>Book via the Sailor app on June 21, 2026</strong> when the reservation window opens — popular restaurants like Ariya and The Test Kitchen fill up within hours. Have your top picks ready and book as soon as the window opens!</div>
+      <div class="vv-block-title">Your Dining Reservations</div>
+      <div class="red-tip" style="margin-bottom:10px;"><div style="font-size:11px;">All booked &amp; confirmed. Need to change a time? Adjust it any time in the <strong>Sailor app</strong>.</div>
       </div>
+      <div class="vv-detail-row"><span class="vv-detail-key">Thu, Aug 20</span><span class="vv-detail-val">Ariya · Dinner 8:15 PM</span></div>
+      <div class="vv-detail-row"><span class="vv-detail-key">Fri, Aug 21</span><span class="vv-detail-val">Ariya · Brunch 11:15 AM</span></div>
+      <div class="vv-detail-row"><span class="vv-detail-key">Fri, Aug 21</span><span class="vv-detail-val">The Wake · Dinner 8:15 PM</span></div>
+      <div class="vv-detail-row"><span class="vv-detail-key">Sat, Aug 22</span><span class="vv-detail-val">Pink Agave · Dinner 7:45 PM</span></div>
+      <div class="vv-detail-row"><span class="vv-detail-key">Sun, Aug 23</span><span class="vv-detail-val">Extra Virgin · Dinner 9:30 PM</span></div>
+      <div class="vv-detail-row"><span class="vv-detail-key">Mon, Aug 24</span><span class="vv-detail-val">The Wake · Brunch 12:30 PM</span></div>
+      <div class="vv-detail-row"><span class="vv-detail-key">Mon, Aug 24</span><span class="vv-detail-val">Dinner ashore in Hamburg</span></div>
+      <div class="vv-detail-row"><span class="vv-detail-key">Tue, Aug 25</span><span class="vv-detail-val">Extra Virgin · Dinner 7:45 PM</span></div>
+      <div class="vv-detail-row"><span class="vv-detail-key">Wed, Aug 26</span><span class="vv-detail-val">The Wake · Dinner 7:30 PM</span></div>
+      <div class="vv-detail-row"><span class="vv-detail-key">Thu, Aug 27</span><span class="vv-detail-val">The Wake · Brunch 9:00 AM</span></div>
+    </div>
+    <div class="vv-block">
+      <div class="vv-block-title">All Specialty Dining · Included</div>
+      <div style="font-size:11px;color:var(--text-muted);margin-bottom:10px;">Every restaurant is included in your fare — here's what's onboard if you'd like to add or swap a meal.</div>
       <div class="dining-card">
-        <div class="dining-emoji">🍛</div>
         <div class="dining-info">
-          <div class="dining-name">Ariya &nbsp;<span class="dining-badge db-new">⭐ New for 2026</span></div>
-          <div class="dining-desc">Brand-new modern Indian restaurant debuting on Valiant Lady. By acclaimed chef Maneet Chauhan. Razzle Dazzle space transforms every evening. Signature dishes: Lamb Shank Biryani, Goan Curried Mussels, Malabar Coconut Crab Cake. Every meal begins with a complimentary welcome sip of jaljeera.</div>
+          <div class="dining-name">Ariya &nbsp;<span class="dining-badge db-new">New for 2026</span></div>
+          <div class="dining-desc">Modern Indian by chef Maneet Chauhan — new for 2026. Lamb shank biryani, Goan mussels, coconut crab cake.</div>
         </div>
       </div>
       <div class="dining-card">
-        <div class="dining-emoji">🌅</div>
         <div class="dining-info">
           <div class="dining-name">Razzle Dazzle</div>
           <div class="dining-desc">Serves breakfast and brunch by day — transforms into Ariya each evening.</div>
         </div>
       </div>
       <div class="dining-card">
-        <div class="dining-emoji">👨‍🍳</div>
         <div class="dining-info">
           <div class="dining-name">The Test Kitchen</div>
-          <div class="dining-desc">Chef's tasting menu experience. One of the most sought-after reservations on the ship — book the moment the window opens on June 21.</div>
+          <div class="dining-desc">Chef's tasting menu — one of the most popular tables onboard.</div>
         </div>
       </div>
       <div class="dining-card">
-        <div class="dining-emoji">🌮</div>
         <div class="dining-info">
           <div class="dining-name">Pink Agave</div>
-          <div class="dining-desc">Modern Mexican cuisine. Vibrant flavours, creative cocktails, and a lively atmosphere.</div>
+          <div class="dining-desc">Modern Mexican — bold flavours and great cocktails.</div>
         </div>
       </div>
       <div class="dining-card">
-        <div class="dining-emoji">🥩</div>
         <div class="dining-info">
           <div class="dining-name">Gunbae</div>
-          <div class="dining-desc">Korean BBQ where you grill your own meats tableside. Interactive, social, and one of the most fun dining experiences on the ship.</div>
+          <div class="dining-desc">Korean BBQ you grill at the table — fun and social.</div>
         </div>
       </div>
       <div class="dining-card">
-        <div class="dining-emoji">🫒</div>
         <div class="dining-info">
           <div class="dining-name">Extra Virgin</div>
-          <div class="dining-desc">Mediterranean-inspired cuisine with fresh ingredients, handmade pastas, and beautiful flavours. A relaxed, romantic atmosphere — perfect for a special evening at sea.</div>
+          <div class="dining-desc">Mediterranean — handmade pasta, relaxed and romantic.</div>
         </div>
       </div>
       <div class="dining-card">
-        <div class="dining-emoji">🥩</div>
         <div class="dining-info">
-          <div class="dining-name">Wake</div>
-          <div class="dining-desc">A premium steakhouse experience at sea. Classic cuts, bold flavours, and an elevated atmosphere — perfect for a special night onboard.</div>
+          <div class="dining-name">The Wake</div>
+          <div class="dining-desc">Premium steakhouse — classic cuts, special-night feel.</div>
         </div>
       </div>
     </div>
@@ -1525,37 +1552,32 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
   <div class="vv-sub-panel" id="vv-events">
     <!-- CLUB THEME NIGHTS -->
     <div class="vv-block" style="margin-top:10px;">
-      <div class="vv-block-title"><span>🎉</span> Club Theme Nights — The Manor</div>
+      <div class="vv-block-title">Club Theme Nights — The Manor</div>
       <div class="dining-card">
-        <div class="dining-emoji">🔴</div>
         <div class="dining-info">
           <div class="dining-name">Scarlet Night</div>
           <div class="dining-desc">The most talked-about event on any Virgin Voyage. Includes the opening event, pool party, remix party, and afterparty. Dress to get wet — Sailors are invited to dance in the pool! Wear red or white.</div>
         </div>
       </div>
       <div class="dining-card">
-        <div class="dining-emoji">😴</div>
         <div class="dining-info">
           <div class="dining-name">The PJ Party</div>
           <div class="dining-desc">Wear your best pyjamas for a memorable night of music, dancing, and unexpected surprises at The Manor. The more festive, the better!</div>
         </div>
       </div>
       <div class="dining-card">
-        <div class="dining-emoji">✨</div>
         <div class="dining-info">
           <div class="dining-name">We Fancy <span style="font-size:10px;color:var(--text-muted);">· Valiant Lady</span></div>
           <div class="dining-desc">The Happenings Cast invite you to embrace your unique style as they guide you through a golden night of global music beats. Think gold, glam, and sequins.</div>
         </div>
       </div>
       <div class="dining-card">
-        <div class="dining-emoji">🌶️</div>
         <div class="dining-info">
           <div class="dining-name">Club Caliente <span style="font-size:10px;color:var(--text-muted);">· Valiant Lady</span></div>
           <div class="dining-desc">Latin rhythms, surprise performances, and vibrant energy at The Manor. Bring your brightest, most colourful outfit and best dancing shoes.</div>
         </div>
       </div>
       <div class="dining-card">
-        <div class="dining-emoji">💛</div>
         <div class="dining-info">
           <div class="dining-name">Heartbeat <span style="font-size:10px;color:var(--text-muted);">· Valiant Lady</span></div>
           <div class="dining-desc">One of the original Virgin Voyages parties — house, groove, funk, pop, and disco with exciting performances from The Happenings Cast.</div>
@@ -1564,23 +1586,20 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
     </div>
     <!-- THINGS TO DO ONBOARD -->
     <div class="vv-block">
-      <div class="vv-block-title"><span>🎯</span> Things to Do Onboard</div>
+      <div class="vv-block-title">Things to Do Onboard</div>
       <div class="dining-card">
-        <div class="dining-emoji">🍹</div>
         <div class="dining-info">
           <div class="dining-name">Shot for Shot</div>
           <div class="dining-desc">A mixologist and "The Foodie" from The Happenings Cast guide you through making 3 signature cocktails. A great way to meet other Sailors and sample some great drinks!</div>
         </div>
       </div>
       <div class="dining-card">
-        <div class="dining-emoji">🔍</div>
         <div class="dining-info">
           <div class="dining-name">Booze Clues <span style="font-size:10px;color:var(--text-muted);">· Valiant Lady</span></div>
           <div class="dining-desc">Grog Walk's sleuther sister! A cocktail-fuelled bar crawl across four bars where you solve clues to crack the case.</div>
         </div>
       </div>
       <div class="dining-card">
-        <div class="dining-emoji">🍺</div>
         <div class="dining-info">
           <div class="dining-name">Brews &amp; Crews: The Ultimate Beer Showdown</div>
           <div class="dining-desc">A lively beer tasting event that feels more like a party than a lecture. A must for Gary — and anyone who loves great beer!</div>
@@ -1588,7 +1607,6 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
         </div>
       </div>
       <div class="dining-card">
-        <div class="dining-emoji">🎭</div>
         <div class="dining-info">
           <div class="dining-name">Cabaret Shows</div>
           <div class="dining-desc">Live bar-service shows with vocal performances and dancing. Valiant Lady features <em>It's a Ship Show</em> (ultimate variety show) and <em>Love Love Love with The Hostess</em> (interactive cabaret exploring the five love languages).</div>
@@ -1601,7 +1619,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
   <!-- SUB: ADD-ONS -->
   <div class="vv-sub-panel" id="vv-addons">
     <div class="vv-block">
-      <div class="vv-block-title"><span>🎁</span> Your Add-Ons</div>
+      <div class="vv-block-title">Your Add-Ons</div>
       <div class="addon-grid">
         <div class="addon-card"><div class="addon-name">$100 Bar Tab Bonus</div><div class="addon-desc">Extra bar tab — on us. Enjoy!</div></div>
         <div class="addon-card"><div class="addon-name">$25 Bar Tab Bonus</div><div class="addon-desc">Extra bar tab — on us. Enjoy!</div></div>
@@ -1610,11 +1628,11 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
         <div class="addon-card"><div class="addon-name">$100 Sailor Loot</div><div class="addon-desc">Onboard spending credit</div></div>
         <div class="addon-card"><div class="addon-name">Premium WiFi</div><div class="addon-desc">Faster internet with streaming and video calling</div></div>
         <div class="addon-card"><div class="addon-name">Priority Boarding</div><div class="addon-desc">Board before the crowds</div></div>
-        <div class="addon-card"><div class="addon-name">💕 Splash of Romance</div><div class="addon-desc">See details below</div></div>
+        <div class="addon-card"><div class="addon-name"> Splash of Romance</div><div class="addon-desc">See details below</div></div>
       </div>
     </div>
     <div class="splash-card">
-      <div class="splash-title">💕 Splash of Romance Package</div>
+      <div class="splash-title"> Splash of Romance Package</div>
       <div class="splash-price">Champagne, chocolates, spa passes &amp; more delights — purchased and confirmed!</div>
       <div class="splash-item">Priority Boarding</div>
       <div class="splash-item">Curated daily cold-pressed juices</div>
@@ -1623,7 +1641,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
       <div class="splash-item">Exclusive Sail Away Hour</div>
       <div class="splash-item">Collection of chocolates</div>
     </div>
-    <div class="red-tip"><span style="font-size:18px;flex-shrink:0;">📱</span><div><strong>Download the Virgin Voyages Sailor app before boarding!</strong> All restaurant reservations, shore excursions, spa treatments, and show bookings are done through the app. Restaurants open June 21 — book Ariya and Test Kitchen the moment reservations open!</div></div>
+    <div class="red-tip"><span style="font-size:18px;flex-shrink:0;"></span><div><strong>Download the Virgin Voyages Sailor app before boarding!</strong> All restaurant reservations, shore excursions, spa treatments, and show bookings are done through the app. Restaurants open June 21 — book Ariya and Test Kitchen the moment reservations open!</div></div>
 </div>
 </div>
 
@@ -1802,11 +1820,11 @@ body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--te
       <div class="check-item"><input type="checkbox" onchange="syncCheck(this)"><label>Pyjamas / loungewear</label></div></div></div>
 
 
-    <div class="acc-card"><div class="acc-header" onclick="toggleAcc('pack-4')"><span class="acc-title">Club Theme Night Outfits</span><span class="acc-chevron" id="chev-pack-4">›</span></div><div class="acc-sub">Virgin Voyages has NO dress code — but these nights are more fun when you dress the part!</div><div class="acc-body" id="pack-4"><div class="check-item"><input type="checkbox" onchange="syncCheck(this)"><label>🔴 Scarlet Night — Wear red or white! This is the biggest party on the ship. Dress to get wet for the pool party portion.<span class="check-sub">Pack something you don't mind getting soaked — red swimwear, white dress, anything bold and red</span></label></div>
-      <div class="check-item"><input type="checkbox" onchange="syncCheck(this)"><label>😴 The PJ Party — Your best, most fun pyjamas<span class="check-sub">Silk sets, fun printed PJs, matching sets — the more festive the better. Pack pyjamas you'd be proud to party in!</span></label></div>
-      <div class="check-item"><input type="checkbox" onchange="syncCheck(this)"><label>✨ We Fancy — Gold, glam, and global style<span class="check-sub">Think metallic, sequins, bold colour, statement pieces. This is your night to go all out!</span></label></div>
-      <div class="check-item"><input type="checkbox" onchange="syncCheck(this)"><label>🌶️ Club Caliente — Latin vibes, bright colours, dance-ready<span class="check-sub">Colourful, flowy, fun. Think salsa energy — bright dresses, bold prints, comfortable dancing shoes</span></label></div>
-      <div class="check-item"><input type="checkbox" onchange="syncCheck(this)"><label>💛 Heartbeat — Disco, funk, groove — anything goes<span class="check-sub">Disco-inspired, sequins, funky patterns, or just your best club outfit. No rules, just vibes!</span></label></div></div></div>
+    <div class="acc-card"><div class="acc-header" onclick="toggleAcc('pack-4')"><span class="acc-title">Club Theme Night Outfits</span><span class="acc-chevron" id="chev-pack-4">›</span></div><div class="acc-sub">Virgin Voyages has NO dress code — but these nights are more fun when you dress the part!</div><div class="acc-body" id="pack-4"><div class="check-item"><input type="checkbox" onchange="syncCheck(this)"><label> Scarlet Night — Wear red or white! This is the biggest party on the ship. Dress to get wet for the pool party portion.<span class="check-sub">Pack something you don't mind getting soaked — red swimwear, white dress, anything bold and red</span></label></div>
+      <div class="check-item"><input type="checkbox" onchange="syncCheck(this)"><label> The PJ Party — Your best, most fun pyjamas<span class="check-sub">Silk sets, fun printed PJs, matching sets — the more festive the better. Pack pyjamas you'd be proud to party in!</span></label></div>
+      <div class="check-item"><input type="checkbox" onchange="syncCheck(this)"><label> We Fancy — Gold, glam, and global style<span class="check-sub">Think metallic, sequins, bold colour, statement pieces. This is your night to go all out!</span></label></div>
+      <div class="check-item"><input type="checkbox" onchange="syncCheck(this)"><label> Club Caliente — Latin vibes, bright colours, dance-ready<span class="check-sub">Colourful, flowy, fun. Think salsa energy — bright dresses, bold prints, comfortable dancing shoes</span></label></div>
+      <div class="check-item"><input type="checkbox" onchange="syncCheck(this)"><label> Heartbeat — Disco, funk, groove — anything goes<span class="check-sub">Disco-inspired, sequins, funky patterns, or just your best club outfit. No rules, just vibes!</span></label></div></div></div>
 
 
     <div class="acc-card"><div class="acc-header" onclick="toggleAcc('pack-5')"><span class="acc-title">Toiletries & Health</span><span class="acc-chevron" id="chev-pack-5">›</span></div><div class="acc-sub">TSA-friendly carry-on liquids if packing in hand luggage</div><div class="acc-body" id="pack-5"><div class="check-item"><input type="checkbox" onchange="syncCheck(this)"><label>Sunscreen<span class="check-sub">Even in August — especially on the open sea deck</span></label></div>
