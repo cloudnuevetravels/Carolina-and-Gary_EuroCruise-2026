@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#12151C">
+<title>Carolina &amp; Gary &middot; London &amp; Valiant Lady &middot; August 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#12151C; --crimson:#8B1A2B; --crimson-deep:#6B0F1D; --gold:#C9922A; --gold-lt:#E8B84B;
+  --navy:#1A2B4A; --paper:#FAF7F2; --card:#fff; --line:rgba(18,21,28,.10); --line-2:rgba(18,21,28,.06);
+  --muted:#6E6E73; --ok:#2C6B4A; --warn:#B85C00;
+  --disp:'Playfair Display',Georgia,serif; --body:'DM Sans',system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+  --pad:20px; --r:14px;
+}
+html{-webkit-text-size-adjust:100%; scroll-behavior:smooth; scroll-padding-top:var(--navh,96px)}
+body{font-family:var(--body);background:var(--paper);color:var(--ink);line-height:1.55;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:820px;margin:0 auto;background:var(--card);min-height:100vh;box-shadow:0 0 80px rgba(0,0,0,.09)}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+:focus-visible{outline:2.5px solid var(--gold);outline-offset:2px;border-radius:4px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* ── HERO ─────────────────────────────── */
+.hero{position:relative;background:var(--ink);color:#fff;padding:34px var(--pad) 26px;overflow:hidden}
+.hero::after{content:'';position:absolute;inset:0;
+  background:radial-gradient(120% 90% at 82% 8%,rgba(139,26,43,.55),transparent 60%),
+             radial-gradient(90% 80% at 8% 100%,rgba(26,43,74,.7),transparent 62%)}
+.hero>*{position:relative;z-index:1}
+.eyebrow{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-lt);font-weight:500}
+.hero h1{font-family:var(--disp);font-weight:700;font-size:clamp(30px,7.4vw,50px);line-height:1.04;margin:.42rem 0 .5rem;letter-spacing:-.01em}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--gold-lt)}
+.hero-sub{font-size:12.5px;color:rgba(255,255,255,.62);font-family:var(--mono);letter-spacing:.02em}
+.route{display:flex;gap:7px;flex-wrap:wrap;margin-top:15px}
+.route span{font-size:10.5px;padding:4px 10px;border:1px solid rgba(255,255,255,.22);border-radius:100px;color:rgba(255,255,255,.9);background:rgba(255,255,255,.06)}
+
+/* countdown */
+.count{display:flex;align-items:baseline;gap:10px;margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.14)}
+.count-n{font-family:var(--disp);font-size:44px;font-weight:700;color:var(--gold-lt);line-height:.9}
+.count-l{font-size:11px;color:rgba(255,255,255,.66);letter-spacing:.04em}
+.count-l b{display:block;color:#fff;font-weight:500;font-size:12.5px;letter-spacing:0}
+
+/* ── NAV (two sticky tiers) ───────────── */
+.navwrap{position:sticky;top:0;z-index:60}
+.nav{display:flex;overflow-x:auto;background:var(--ink);
+  border-bottom:1px solid rgba(255,255,255,.1);scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.nav::-webkit-scrollbar{display:none}
+.nav a{flex:0 0 auto;padding:13px 15px;font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;
+  color:rgba(255,255,255,.56);text-decoration:none;border-bottom:2px solid transparent;transition:color .18s,border-color .18s;white-space:nowrap}
+.nav a:hover{color:#fff}
+.nav a.on{color:var(--gold-lt);border-bottom-color:var(--gold-lt)}
+
+.subnav{display:flex;align-items:center;gap:6px;overflow-x:auto;background:var(--card);padding:7px 12px;
+  border-bottom:1px solid var(--line);scrollbar-width:none;-webkit-overflow-scrolling:touch;
+  box-shadow:0 6px 14px -12px rgba(18,21,28,.5)}
+.subnav::-webkit-scrollbar{display:none}
+.subnav .sk{flex:0 0 auto;font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);
+  font-weight:700;padding-right:3px}
+.subnav button{flex:0 0 auto;padding:5.5px 12px;font-size:11.5px;font-weight:500;color:var(--muted);
+  border:1px solid var(--line);border-radius:100px;white-space:nowrap;transition:all .16s;background:var(--card)}
+.subnav button:hover{color:var(--ink);border-color:var(--muted)}
+.subnav button.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.subnav.days button{min-width:38px;text-align:center;font-family:var(--mono);font-weight:700;padding:5.5px 9px}
+
+[id^="day-"],[id^="g-"],[id^="s-"],[id^="i-"],[id^="tip-"]{scroll-margin-top:var(--navh,96px)}
+.sec{scroll-margin-top:var(--navh,96px)}
+
+.wgroup{margin-top:22px}
+.wgroup:first-of-type{margin-top:16px}
+.wgroup-h{display:flex;align-items:center;gap:9px;margin-bottom:9px}
+.wgroup-h b{font-family:var(--disp);font-size:16px;font-weight:700}
+.wgroup-h i{flex:1;height:1px;background:var(--line);font-style:normal}
+.wgroup-h em{font-style:normal;font-size:10.5px;color:var(--muted);font-family:var(--mono)}
+
+.pdf-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:13px;
+  background:var(--crimson);color:#fff;border-radius:10px;font-size:13.5px;font-weight:500;text-decoration:none;
+  transition:background .16s}
+.pdf-btn:hover{background:var(--crimson-deep)}
+.pdf-btn svg{width:16px;height:16px;flex:0 0 auto}
+.qr-toggle{display:block;width:100%;margin-top:8px;padding:10px;border:1px solid var(--line);border-radius:10px;
+  font-size:12px;color:var(--muted);background:var(--card)}
+.qr-toggle:hover{background:var(--paper);color:var(--ink)}
+.qr-fold{display:none;padding-top:6px}
+.qr-fold.on{display:block}
+
+/* ── SECTIONS ─────────────────────────── */
+.sec{padding:32px var(--pad);border-top:1px solid var(--line-2)}
+.sec:first-of-type{border-top:none}
+.sec-alt{background:var(--paper)}
+.sec-hd{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:6px}
+.sec-k{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--crimson);font-weight:700}
+.sec h2{font-family:var(--disp);font-size:clamp(23px,4.6vw,31px);font-weight:700;letter-spacing:-.01em;line-height:1.15}
+.sec-note{font-size:13.5px;color:var(--muted);margin-top:7px;max-width:60ch}
+
+/* ── WALLET / PASSES (signature) ──────── */
+.wallet{display:grid;gap:11px;margin-top:20px}
+.pass{position:relative;display:flex;align-items:stretch;width:100%;text-align:left;background:var(--card);
+  border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:transform .16s,box-shadow .16s,border-color .16s}
+.pass:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(18,21,28,.11);border-color:rgba(18,21,28,.2)}
+.pass-stub{flex:0 0 62px;background:var(--ink);color:#fff;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:1px;position:relative}
+.pass-stub .d{font-family:var(--disp);font-size:21px;font-weight:700;line-height:1;color:var(--gold-lt)}
+.pass-stub .m{font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+/* perforation */
+.pass-stub::after{content:'';position:absolute;right:-1px;top:0;bottom:0;width:2px;
+  background:repeating-linear-gradient(to bottom,var(--card) 0 4px,transparent 4px 8px)}
+.pass-body{flex:1;padding:12px 14px;min-width:0}
+.pass-t{font-size:14.5px;font-weight:500;line-height:1.3}
+.pass-s{font-size:11.5px;color:var(--muted);margin-top:3px;display:flex;flex-wrap:wrap;gap:5px 9px;align-items:center}
+.pass-ref{font-family:var(--mono);font-size:10.5px;letter-spacing:-.01em}
+.pass-go{flex:0 0 46px;display:flex;align-items:center;justify-content:center;color:var(--crimson);
+  border-left:1px dashed var(--line);font-size:11px;font-weight:700;letter-spacing:.05em}
+.pass-go svg{width:17px;height:17px}
+.chip{font-size:9.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:2.5px 7px;border-radius:4px;white-space:nowrap}
+.c-qr{background:rgba(44,107,74,.13);color:var(--ok)}
+.c-ref{background:rgba(26,43,74,.1);color:var(--navy)}
+.c-hold{background:rgba(184,92,0,.13);color:var(--warn)}
+
+/* pass overlay */
+.ov{position:fixed;inset:0;z-index:200;background:rgba(9,11,15,.96);display:none;
+  align-items:flex-start;justify-content:center;padding:22px 16px;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.ov.open{display:flex;animation:fade .22s ease}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.ticket{width:100%;max-width:400px;background:#fff;border-radius:18px;overflow:hidden;margin:auto;
+  animation:rise .26s cubic-bezier(.2,.8,.3,1)}
+@keyframes rise{from{transform:translateY(14px);opacity:0}to{transform:none;opacity:1}}
+.tk-top{background:var(--ink);color:#fff;padding:16px 20px 15px;position:relative}
+.tk-venue{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-lt);font-weight:700}
+.tk-name{font-family:var(--disp);font-size:22px;font-weight:700;line-height:1.15;margin-top:5px}
+.tk-when{font-size:12px;color:rgba(255,255,255,.68);margin-top:5px;font-family:var(--mono)}
+/* notch */
+.tk-notch{position:relative;height:20px;background:var(--ink)}
+.tk-notch::before,.tk-notch::after{content:'';position:absolute;top:50%;transform:translateY(-50%);
+  width:22px;height:22px;border-radius:50%;background:rgba(9,11,15,1)}
+.tk-notch::before{left:-11px}.tk-notch::after{right:-11px}
+.tk-notch i{position:absolute;left:14px;right:14px;top:50%;height:0;border-top:2px dashed rgba(255,255,255,.28)}
+.tk-qr{padding:24px 20px 8px;text-align:center;background:#fff}
+.tk-qr img{width:100%;max-width:262px;height:auto;image-rendering:pixelated;display:block;margin:0 auto}
+.tk-meta{padding:12px 20px 20px;background:#fff}
+.tk-row{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-top:1px solid var(--line-2);font-size:12.5px}
+.tk-row:first-child{border-top:none}
+.tk-row dt{color:var(--muted)}
+.tk-row dd{font-family:var(--mono);font-size:11.5px;text-align:right;word-break:break-all;font-weight:700}
+.tk-tip{font-size:11.5px;color:var(--muted);text-align:center;padding:0 20px 16px;background:#fff;line-height:1.5}
+.tk-close{position:sticky;top:0;margin:0 auto 14px;display:block;background:rgba(255,255,255,.1);color:#fff;
+  border:1px solid rgba(255,255,255,.2);border-radius:100px;padding:9px 22px;font-size:12.5px;font-weight:500}
+.tk-close:hover{background:rgba(255,255,255,.18)}
+.tk-nav{display:flex;gap:8px;max-width:400px;margin:14px auto 0;width:100%}
+.tk-nav button{flex:1;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);color:#fff;
+  padding:11px;border-radius:10px;font-size:12px;font-weight:500}
+.tk-nav button:hover:not(:disabled){background:rgba(255,255,255,.17)}
+.tk-nav button:disabled{opacity:.32;cursor:default}
+
+/* ── DAYS ─────────────────────────────── */
+.day{border-top:1px solid var(--line-2)}
+.day:first-child{border-top:none}
+.day-hd{display:flex;gap:14px;align-items:center;width:100%;padding:16px 0;text-align:left}
+.day-date{flex:0 0 50px;text-align:center}
+.day-date .n{font-family:var(--disp);font-size:25px;font-weight:700;line-height:.95;color:var(--crimson)}
+.day-date .m{font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+.day-tt{flex:1;min-width:0}
+.day-tt h3{font-family:var(--disp);font-size:18.5px;font-weight:700;line-height:1.2}
+.day-tt p{font-size:12px;color:var(--muted);margin-top:2px}
+.day-cv{flex:0 0 auto;color:var(--crimson);font-size:19px;transition:transform .24s;line-height:1}
+.day.on .day-cv{transform:rotate(90deg)}
+.day-bd{display:none;padding:0 0 22px 64px}
+.day.on .day-bd{display:block}
+@media(max-width:520px){.day-bd{padding-left:0}}
+
+.tl{position:relative;padding-left:20px;margin-top:4px}
+.tl::before{content:'';position:absolute;left:4px;top:7px;bottom:7px;width:1.5px;background:var(--line)}
+.ev{position:relative;padding:0 0 17px}
+.ev::before{content:'';position:absolute;left:-20px;top:6px;width:9px;height:9px;border-radius:50%;
+  background:var(--card);border:2px solid var(--crimson)}
+.ev.k-eat::before{border-color:var(--warn)} .ev.k-drink::before{border-color:#1A5C8B}
+.ev.k-go::before{border-color:var(--navy)} .ev.k-star::before{border-color:var(--gold);background:var(--gold)}
+.ev-t{font-family:var(--mono);font-size:10.5px;color:var(--crimson);font-weight:700;letter-spacing:.02em}
+.ev-n{font-size:14.5px;font-weight:500;margin-top:1px;line-height:1.35}
+.ev-d{font-size:13px;color:var(--muted);margin-top:3px;line-height:1.55}
+.ev-a{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px}
+.lnk{font-size:11px;padding:3.5px 9px;border:1px solid var(--line);border-radius:100px;text-decoration:none;
+  color:var(--navy);transition:background .16s,border-color .16s;display:inline-flex;align-items:center;gap:4px}
+.lnk:hover{background:var(--paper);border-color:var(--navy)}
+.lnk.qr{background:var(--ink);color:#fff;border-color:var(--ink);font-weight:500}
+.lnk.qr:hover{background:var(--crimson);border-color:var(--crimson)}
+.tag{font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 7px;border-radius:4px}
+.t-c{background:rgba(94,53,177,.12);color:#5E35B1} .t-g{background:rgba(44,107,74,.12);color:var(--ok)}
+
+.note{display:flex;gap:9px;background:var(--paper);border-left:2.5px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:11px 13px;font-size:12.5px;color:#3d3d42;margin-top:12px;line-height:1.55}
+.note.hot{background:rgba(184,92,0,.07);border-left-color:var(--warn)}
+.note b{color:var(--ink);font-weight:700}
+
+/* ── CARDS / DATA ─────────────────────── */
+.grid{display:grid;gap:11px;margin-top:18px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:15px 16px}
+.sec-alt .card{background:#fff}
+.card-k{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--crimson);font-weight:700;margin-bottom:9px}
+.row{display:flex;justify-content:space-between;gap:12px;padding:6.5px 0;border-top:1px solid var(--line-2);font-size:13px}
+.row:first-of-type{border-top:none}
+.row dt{color:var(--muted);flex-shrink:0}
+.row dd{text-align:right;font-weight:500}
+.row dd.mono{font-family:var(--mono);font-size:11.5px;color:var(--crimson);font-weight:700;letter-spacing:-.01em}
+
+.fl{background:var(--ink);color:#fff;border-radius:var(--r);padding:16px 18px;position:relative;overflow:hidden}
+.fl+.fl{margin-top:11px}
+.fl-hd{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:13px}
+.fl-no{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.62)}
+.fl-ref{font-family:var(--mono);font-size:11.5px;font-weight:700;background:var(--gold);color:var(--ink);padding:3px 9px;border-radius:5px}
+.fl-rt{display:flex;align-items:center;gap:12px}
+.fl-pt{text-align:center;flex:0 0 auto}
+.fl-pt .i{font-family:var(--disp);font-size:27px;font-weight:700;line-height:1}
+.fl-pt .t{font-size:12.5px;color:var(--gold-lt);margin-top:2px;font-family:var(--mono)}
+.fl-pt .dt{font-size:10px;color:rgba(255,255,255,.5);margin-top:1px}
+.fl-mid{flex:1;text-align:center;position:relative}
+.fl-mid::before{content:'';position:absolute;left:0;right:0;top:9px;height:1px;background:rgba(255,255,255,.22)}
+.fl-mid span{position:relative;background:var(--ink);padding:0 7px;font-size:14px;color:var(--gold-lt)}
+.fl-mid small{display:block;font-size:9.5px;color:rgba(255,255,255,.5);margin-top:6px;letter-spacing:.04em}
+
+.acc{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:9px;background:var(--card)}
+.acc-h{display:flex;justify-content:space-between;align-items:center;gap:10px;width:100%;padding:13px 15px;text-align:left;font-size:14px;font-weight:500}
+.acc-h:hover{background:var(--paper)}
+.acc-h span{color:var(--crimson);font-size:18px;transition:transform .22s;line-height:1}
+.acc.on .acc-h span{transform:rotate(90deg)}
+.acc-b{display:none;padding:2px 15px 15px;border-top:1px solid var(--line-2)}
+.acc.on .acc-b{display:block}
+.li{display:flex;gap:9px;padding:7px 0;font-size:13px;line-height:1.55;color:#3d3d42}
+.li::before{content:'';flex:0 0 5px;height:5px;border-radius:50%;background:var(--gold);margin-top:8px}
+.li b{color:var(--ink)}
+
+.sched{margin-top:14px}
+.sr{display:flex;gap:13px;align-items:center;padding:10px 0;border-top:1px solid var(--line-2)}
+.sr:first-child{border-top:none}
+.sr .d{flex:0 0 26px;height:26px;border-radius:50%;background:var(--paper);border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:700;font-family:var(--mono)}
+.sr .p{font-size:13.5px;font-weight:500}
+.sr .t{font-size:11.5px;color:var(--muted);font-family:var(--mono);margin-top:1px}
+.sr .w{font-size:11px;color:var(--warn);margin-top:1px}
+
+footer{background:var(--ink);color:rgba(255,255,255,.55);padding:26px var(--pad);text-align:center;font-size:12px}
+footer strong{display:block;font-family:var(--disp);font-size:17px;color:#fff;font-weight:500;margin-bottom:5px}
+footer a{color:var(--gold-lt)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+</style>
+</head>
+<body>
+<div class="wrap">
+<script>
+/* ═══════════════════════════════════════════════════════════════
+   QR IMAGE DATA — scanned ticket codes, embedded so they work offline.
+   You never need to touch this block.
+   ═══════════════════════════════════════════════════════════════ */
+const QR = {
+  vg_a: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAc4AAAHOAQAAAAA5ndQdAAACJElEQVR42u2cS27jMBBEq0YCspRukKPIV8vNrBuRywEkdBb8iHbGASbAbAaPG4O03qaBQncXW3Loh+v8pR8vUFBQUFBQUFBQUFDQf4cqyhqPtohDS9wVR9lFpOHvqRAHEQZFOdH0EJG0RRXQpZVUBDQ+iXJAQSVJ2bbnIqejqSpdArJt34gwKKik+c/HU0i7NR2ECRT0L5RzztIWPr3E7iBMoKCvlbNcCnHPOdm9WgsiDAr6RTmnH//I6xZuOjqk3UQYFPSLcp4SStFRSNLueMhHRBgUVN2VfrzWafc5cVnV9cnrEFcaFFTyrGxb0lLubFI7vMmzpC10eh0ueYgwKNXataYjW4rirVXbIE4vIVnKlrpVTYRBQfugzW+/x11+a/M22bbfIhWHYImIOIgwKOgwtzaUadI4t9YOyxAO0zegoEO1VmqwqzCra0lSdMd6icGFI8Kg5JxhnDOpDqyNblpqI9N98JOcA4py2rq3Mq1WZG13ZSBcaVDQ5z5nNApqejlK8zMs+hxQ0LHPafKYQup9jsuu9kB1CIc+BxRUL94JHTOQBlMtlR05BxTlfPdO6OVKjwUdfQ4o6It3QkdP4MM6bduaIuKu/ggRBiXnPN12Vmug5Zx+L7rwHQJQ0O/ROv/53O7sZvoGFPTVO6GaIq/dW3PpejwdeWVWGhT0AS29jO217N5LfZZ9Kz89A9HngIJK5ovsoKCgoKCgoKCgoKD/GfoJkGjPSdjmVs0AAAAASUVORK5CYII=",
+  vg_b: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAc4AAAHOAQAAAAA5ndQdAAACJklEQVR42u2cQY6kMAxFvyfs4QZ9FOpmczU4ytwAli0FeRYxIUBVL1rqTdfLhsLU21j6ivPjxFzfHNsffXuAgoKCgoKCgoKCgoL+HCovow2N7lnS6Eq+lL8szedUiEyGQd8Y7aoecvxYB0nJJcml3iVLWRqn+G5kGBS0RVczs1DSZra/zeZFVGZm9iDDoKCv0SjTPm0gTaCgX1VrpxH1mSVfbXSrlRwZBgW9Kac/bALfLN7aIBkGBT308MxbU/Ll8mgrObw1UJTjz8b+Lav3qWrlPFAOKMpxjz2bdutmLMF2dwflgIJelJPVu+/q2L21Glz2Mm0SygEFbXdCPawBSVI8arD3GqxOGxkGBZWZDZrNOvXHvCJptcf+V+tK0UaGQUFv3TcpryZp66TwoWdT8tXGybeODIOC3hwC90nSMedMF9+tXe6wzgEFVaxshqKjf/bXo31t71QrXWz+aR8+yTMZBgVVO6GMzfRynYFa3405BxTl3Kq1CEZhtjSeQD2tg3JA3x61pzd4mNQvx1txD+zsJXCDByhoLGliPEpoNm02aDY15nR0FJBhUKq10+ql6bep9dmlsYBqDRT01ZnQ0FFx08JbC7+ADIOCvkKjaLO69dmX1rb1cKxJE+hbo8/PhCrl0jxwHAadH0q59/mwFMgwKMop88qx+InH3viZTw1rZBgU9Iv71lSbcLJ0P6aDQwD6zqhxIzsoKCgoKCgoKCgo6C9D/wOJ0ODzR/OJLAAAAABJRU5ErkJggg==",
+  hk_e_a: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAj4AAAI+AQAAAACUST0BAAAC9klEQVR42u2dO66kMBBFq4bO6R28pfCWDjtyhyOBagJ/KBvIOhhbxwkNuE9g6VJfjJp8ZRx/5EsDECBAgAABAgQIECBAgAABAvQtkFgc/tJi6WBmIZ+J2C5znBzc5Cle2llsQIB6VX9ScdS7mZmtkg9R9qfey5Tzf6gfEKCOQR9V1Vf8fajqr8ihb1lMJguyaZJ9mq0ap7DYgAB1CnrdXlWROWy/OtlHl1WOV3okzMZiAwI0tvpzVHBo8vU/bxGZdhYbEKAh1f9o2DXKPt2uDyw2IEC9gh5y/inEfzycg6wfIECd2/7GlEeX30RENs1nh862qd17CSw2IEC92v4pH0K06EFEbD89gTLT9jNUoOIHCNAQ6g/N2WJJ4ans7yt+S2n6Qf2AAHWu/lPMxegnaV+6fZL6d5njIwH1AwLUu/rbsYpv6i169+2AeP6AAA3g+aezEukno3918vO9eqB+QIC69vy9RU9GP7n8s3sWVI8E1A8IUPe2v2T9grt3m/O3XPbH9gMCNJD6feHvKecfPX9/D/UDAtSz5+96+Nuq3iUckPNVP7J+gAANZ/trFyDFAbN7TkxVAID6AQHq1va7Gt+S83xS+vnC3UzifkCABrH9ltP71qj/0uvnen9QPyBA3atfqri/ZPZ8bG+++Z9eP0CARvH8azG7R8JNt0+IfyXnDwjQMLZ/aVr+Tmvf9vnXXYGoHxCgIUBe6If+2Cr6ko/+St3n37wPxGIDAtSt51+H/1PO8928/VumUPEDBGgg9V+q/253/5uWgJWsHyBAY8T9aSxVOe/hax4i5PwBARpD/e23fKqgXq41vvqA+gEB6ln94RrNt/v+2NMHvVA/IECDgGyXtJnvW0RU9cdWsb+qqup3/tjKp79YbECAxrD9fl+/Oue/PmwFhu0HBKhj0Hx50dd2X+hPZX85ogtw6Fs2ZbEBAere9ouXffNqb739z57fAHLuAbYfEKDuQGrf4RwsNiBAgAABAgQIECBAgAABAvTfgf4Bftlu/i3w8N8AAAAASUVORK5CYII=",
+  hk_r_a: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAj4AAAI+AQAAAACUST0BAAADIklEQVR42u2dQZKcMAxFvwJVWdI3yFHoo8NRcgNYpsqUsjAGQTO7WcTO86YHN/0WqvqWZMkec33L2H7omwYgQIAAAQIECBAgQIAAAQIE6LtA8jzi1JinJkka8oc0urr9XV/Cy/tkwtiAANWq/iDt0T1pcHdPeS1IGnxSkX2XX7n+DvUDAlQxaDUz6yVJ1kuabff91mu1t6zPi0DKr5iZvTE2IEDVgvqvvlhNUuerjZO6JM1vbYaxAQH6D9Q/LPNb0uCzubS+RtfWD4tkXcLYgAC1pf7hq8afXe+75/fLB8YGBKh69V/D+i6tNrp1aX2NbnFysi7tewIYGxCgFtR/c+WbDb4rfDbPcYEfC8RTlICxAQGqDBQqfkuZGv0s7rlPpcYn5TKg396k4gcIUP3qj4X+IPRD4dqbfpayQKB+QICaUL+fxfzTzT/4/qMFSCU8QP2AANWv/hjdjyUdePT9e+SP+gEBakL9D729Xlp8j6ygJPz4fkCA2lD/rveSAFxP8uSAIDb4H0sC6gcEqAHfv2RXfsg+SPt2yidGCez6AQLUjPrDU8n0dQb5H+kA6gcEqHb1h+j+9P2Xrf9rpl/Sf9QPCFBDvn8q6i+bAdc8wOMlH6gfEKAG1H+V/T6G57x/0m0tQP2AANWq/qsrL9+FGt+Z9x+TR1EQ9QMCVHvkP95l333EBWLXDxCgFn3/eGv5i9X/2O0TfD/1fkCAagWd5/vzX/kUr2+9NL8lra+P2z22Pt/6laTz7D/GBgSodtCl3q/NXiUPmOQpX+75M0cJx3cYGxCguiP/VJ7ux3um2xm/c51YRMUPEKAm8v4wJIXC33WBiFuBVPwAAapf/XHq3OB7utsnPk3s+gECVL/6u4+tf3/y/aPHrQHO+AEC1IT6l5LNX6/x0dP5/nOgfkCA2gPNti8JZvbLJ9lP/21mp+yX2BOMsQEBagN0ub3Lk6TZYuQ/yf/YC2MDAlQx6Pl/+Xhu89HR5rOaZF0aXLkhaHR1vr5mc4wNCFDteX8YMe//PN/Pff6AALUBMv8ezoaxAQECBAgQIECAAAECBAgQoH8O9Be7dypazGE9rAAAAABJRU5ErkJggg==",
+  hk_e_b: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAj4AAAI+AQAAAACUST0BAAADOElEQVR42u2dPY6kMBBGv1p3Tt+IvtleDY4yN4BwJVBtYBvb9MxGHayt54QG0S8oqf7twlwfWecvfWgBAgQIECBAgAABAgQIECBAgD4FksdVP5pdwbf4e/KlepjWVr2cHh4IGxCgXkF31Z58kR/ZQGxaTaeZvbItuFsNhA0IUGegR/m5PyWFQ5I830XtPh+TSyZJq6VXTJLmBWEDAjSA9lfLKpMwuwWX1ldOFRA2IEADg/zQ5O4WbYP/sWfO+xdkBAjQeL5/qrx68vanTV7uciRwfBcCIGxAgHrV/tPqyD8cSdF3m5d8V72wGsIGBGgQ7X/L5ieXPF0qy7Cat1ECwgYEqFPQ1e+PHf7c4ztyx2/Krb1FCr7lvQCzp1fo9wMCNErkH3t8dqX/u6W4YPaSHEwuWfDdZvr9gAB17/uTf8+7fULj7dWEACpxwXL9Hd8PCFC32n9IJZ7PYX1y+ikrqN68cgQif0CABsj770agDQiuh8kkoP2AAI3l+1NYX1f2vKrzJX3fbgYC7QcEqH+QH9rt91XLC/5lZjrtGe8nX+LOv9Xsoabtj7ABAerV93ud2xdbkAKCK8hPdb6SDuD7AQEaQ/vbg/1vBb6k79s39QKEDQhQ33n/D4696QA0Iz/w/YAA9a79xelXBf1c2bta+9stAaDqBwjQINo/N4r+lvA3Hb9sLoj8AQHqP/K/z/J6swWh7PUrhUF8PyBAvWt/lekXDQ/f7/a5Lgu+HxCg/iP/psov1Vt59L7Pv2z5w/cDAjRC3p/U/n6E51/7/NF+QIAGyPuvjT3z7bR/e9Qv//FmEhA2IED95v3Vaqv82TKEUvzz2wXtBwSo57z/Wu38nh9m+7S2AO0HBKg70DXbJ+R63/5M6f9qLv0420e38X4IGxCgXn1/KPv853ux/6j7f2Ux2wcQoPFA9tBuZgr+ZS9J8S4e9H07D4SwAQHqO/JvV/qMR3Hz2/pyabfZLRyTK44BZaonIEBDaH+l737G5+dj8tXqj3mu5qclWzBt1zc9ETYgQP1qf/stHyl+xMf3+Hh/zl6mfVejvB1hAwLUKcj8M5wTYQMCBAgQIECAAAECBAgQIED/HegvzLDUROzuRzAAAAAASUVORK5CYII=",
+  hk_r_b: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAj4AAAI+AQAAAACUST0BAAADEUlEQVR42u2dO66kMBBFbw1IE9I7eEtplg47osOWQDUBtrGBnqiDsec44UHzTmDpuj4uF+b6yth+6UsDECBAgAABAgQIECBAgAABAvQtkHwf+aOnx0vnS7yTfNWwv7xkL3f7o5XJBgSoVvUHFbsvenr+cIqyP/R+fgX1AwJUN+hlZtbvf29mNsrf9oguwGylJ2BmZiOTDQhQtaD+9qlJwyJZ5y97Ttr6sCQMzmQDAvQfgGbztz2ir39cmCNAgFqz/R8Nu3WrJIWfywuTDQhQraAPOf8Q4n+8HIOsHyBAldv+kynfQ3zfAwBtJkm+2eCz+b2XwGQDAlSr7e/iZYlxwCRfD08gvenrESqw4wcIUCOef9jFnxQvqb7HfdLh+ac7PH9AgOpX/+ECLKffLtU+YZ1YNeyLAOoHBKgF9R9mPrgAy0XvoRww9wRQPyBAdXv+KdKXjhLfEA5kTn5Z/puSAUw2IEC1qv9cvZ/rvcgBlksC6gcEqHrPfy2eFln+U87/fCwI9QMC1AIoT/A9PZzkCQG/9XrZKOsVigAeTDYgQO3Y/tK7vwkOwnh6niHA9gMCVHPcv2v6spl/090jLRBU+wAC1ITtT209gn0fso3+a9w/nXcKUT8gQNXa/mD0Fe37kN2VtX7FQ9QPCFD1oJTEe9ko+x1dgNTwJ0T6s/mql43xH2IzICYbEKBqPf9UyJfv6u3JgEu1TwoO8PwBAWrA8y+EXrbvvanzV3b+D/UDAtQCyMx+Lod9wkb/TZ2/Umkwkw0IULWev8esn6KTfxF62QWIUz6AADWkfj818s+reafTif7TK6gfEKCq4/4wyiK/D1/zyL0E1A8IUM3q7+6LfrIloeznEdcJ1A8IUP3qX67RfFYHqEL2On3QC/UDAtQIyN/20Gzhzsx+fJK/zcws7/wxG9U+gADVCur/9mP4oJe69WWSOpfm0XeX37q1aOzNZAMC1Ebcn/r3XHP+x+nfgTp/QIBaUH82ypad07nFT3bQV+T8AQGqFmT+Hc7GZAMCBAgQIECAAAECBAgQIED/HOgPj/1BOxZ0nxoAAAAASUVORK5CYII="
+};
+</script>
+<script>
+/* ═════════════════════════════════════════════════════════════════════════
+   TRIP DATA — everything on this page comes from this one object.
+   To change the page, change this object. Nothing below it needs editing.
+   ═════════════════════════════════════════════════════════════════════════ */
+const TRIP = {
+
+meta: {
+  title1: "London, Canals",
+  title2: "&amp; Cobblestones",
+  dates:  "August 17 &ndash; 29, 2026",
+  who:    "Carolina &amp; Gary",
+  path:   "JFK \u2192 London \u2192 Portsmouth \u2192 North Sea \u2192 London \u2192 JFK",
+  start:  "2026-08-17",
+  end:    "2026-08-29",
+  chips:  ["13 days","4 countries","7 nights at sea","Valiant Lady"]
+},
+
+/* ── PASSES ─────────────────────────────────────────────────────────────
+   kind:'qr'  → opens a scannable pass. Needs qr: (key from the QR block).
+   kind:'ref' → opens a pass showing the confirmation number instead.
+   To add a ticket: copy a block, change the fields. That's the whole job.
+   ─────────────────────────────────────────────────────────────────────── */
+tickets: [
+  { id:"hp",   kind:"ref", d:"18", m:"Aug", venue:"Viator",
+    name:"Harry Potter Tour of London + Boat Ride",
+    when:"Tue, Aug 18 \u00b7 7:00 PM", ref:"1366333643",
+    rows:[["Type","Guided walking tour + Thames boat"],["Travellers","2 adults"],["Booked via","Viator"]],
+    tip:"Show this reference (or the Viator app booking) to your guide at the meeting point." },
+
+  { id:"sher", kind:"ref", d:"18", m:"Aug", venue:"Viator",
+    name:"Sherlock Holmes Mystery Trail",
+    when:"Tue, Aug 18 \u00b7 self-guided, start anytime", ref:"1369291137",
+    rows:[["Type","Self-guided app walk"],["Starts","Near Baker Street"],["Booked via","Viator"]],
+    tip:"Download the trail in the app on hotel wi-fi before you set off." },
+
+  { id:"brug", kind:"ref", d:"22", m:"Aug", venue:"Viator",
+    name:"Zeebrugge \u2194 Bruges Round-Trip Shuttle",
+    when:"Sat, Aug 22 \u00b7 from the cruise terminal", ref:"1393316569",
+    rows:[["Type","Round-trip coach, ~30 min each way"],["Travellers","2 adults"],["Booked via","Viator"]],
+    tip:"Note the return coach time when you board \u2014 last one back leaves well before all-aboard." },
+
+  { id:"vg_a", kind:"qr", pdf:"tickets/vangogh-ticket-1.pdf", d:"23", m:"Aug", venue:"Van Gogh Museum", qr:"vg_a",
+    name:"Van Gogh Museum \u00b7 Ticket 1",
+    when:"Sun, Aug 23 \u00b7 11:45 AM", ref:"774105161708118155",
+    rows:[["Admits","1 adult"],["Entrance","Museumplein 6 \u2014 main entrance"],["Arrive by","12:15 PM at the latest"],["Price","\u20ac25.00"]],
+    tip:"Entry is granted up to 30 minutes after 11:45. Turn your brightness up before the scanner." },
+
+  { id:"vg_b", kind:"qr", pdf:"tickets/vangogh-ticket-2.pdf", d:"23", m:"Aug", venue:"Van Gogh Museum", qr:"vg_b",
+    name:"Van Gogh Museum \u00b7 Ticket 2",
+    when:"Sun, Aug 23 \u00b7 11:45 AM", ref:"774173875410714082",
+    rows:[["Admits","1 adult"],["Entrance","Museumplein 6 \u2014 main entrance"],["Arrive by","12:15 PM at the latest"],["Price","\u20ac25.00"]],
+    tip:"Entry is granted up to 30 minutes after 11:45. Turn your brightness up before the scanner." },
+
+  { id:"boat", kind:"ref", d:"23", m:"Aug", venue:"Viator", hold:true,
+    name:"Amsterdam Smoke-Friendly Canal Cruise",
+    when:"Sun, Aug 23 \u00b7 2:00 PM", ref:"1416563247",
+    rows:[["Type","Private-style luxury boat"],["Travellers","2 adults"],["Status","Payment not yet confirmed"]],
+    tip:"Carolina is checking whether an earlier slot is available \u2014 this time may still move." },
+
+  { id:"hk_e_a", kind:"qr", pdf:"tickets/heineken-guest-1.pdf", d:"23", m:"Aug", venue:"Heineken Experience", qr:"hk_e_a",
+    name:"Heineken Experience \u00b7 Guest 1",
+    when:"Sun, Aug 23 \u00b7 4:30 PM entry", ref:"770024440315366962",
+    rows:[["Admits","1 adult (18+)"],["Address","Stadhouderskade 78"],["Arrive","15 min before your slot"],["Tour length","~90 minutes, self-guided"],["In this PDF","Tour + rooftop, both codes"]],
+    tip:"Photo ID may be requested at the door." },
+
+  { id:"hk_r_a", kind:"qr", pdf:"tickets/heineken-guest-1.pdf", d:"23", m:"Aug", venue:"Heineken Rooftop", qr:"hk_r_a",
+    name:"Heineken Rooftop Bar \u00b7 Guest 1",
+    when:"Sun, Aug 23 \u00b7 6:00 PM", ref:"770084715100743856",
+    rows:[["Admits","1 adult (18+)"],["Access","Lift from the end of the tour"],["Included","One additional drink"],["In this PDF","Tour + rooftop, both codes"]],
+    tip:"Check the ship's all-aboard time before you settle in up here \u2014 see the Aug 23 notes." },
+
+  { id:"hk_e_b", kind:"qr", pdf:"tickets/heineken-guest-2.pdf", d:"23", m:"Aug", venue:"Heineken Experience", qr:"hk_e_b",
+    name:"Heineken Experience \u00b7 Guest 2",
+    when:"Sun, Aug 23 \u00b7 4:30 PM entry", ref:"770055758549389882",
+    rows:[["Admits","1 adult (18+)"],["Address","Stadhouderskade 78"],["Arrive","15 min before your slot"],["Tour length","~90 minutes, self-guided"],["In this PDF","Tour + rooftop, both codes"]],
+    tip:"Photo ID may be requested at the door." },
+
+  { id:"hk_r_b", kind:"qr", pdf:"tickets/heineken-guest-2.pdf", d:"23", m:"Aug", venue:"Heineken Rooftop", qr:"hk_r_b",
+    name:"Heineken Rooftop Bar \u00b7 Guest 2",
+    when:"Sun, Aug 23 \u00b7 6:00 PM", ref:"770063378517480508",
+    rows:[["Admits","1 adult (18+)"],["Access","Lift from the end of the tour"],["Included","One additional drink"],["In this PDF","Tour + rooftop, both codes"]],
+    tip:"Check the ship's all-aboard time before you settle in up here \u2014 see the Aug 23 notes." }
+],
+
+/* ── DAYS ──────────────────────────────────────────────────────────────
+   k: dot colour — "" | eat | drink | go | star
+   qr: id of a pass (from tickets above) to surface a "Show ticket" button
+   map: Google Maps search text        link: [label, url]
+   tag: "c" for Carolina, "g" for Gary
+   ────────────────────────────────────────────────────────────────────── */
+days: [
+{ d:"18", m:"Aug", dow:"Tuesday", title:"Hello, London",
+  sub:"Land at 8:50 AM \u00b7 CitizenM Victoria Station",
+  stay:{ name:"CitizenM London Victoria Station", note:"Room held from Aug 17 \u2014 check straight in", url:"https://app.marriott.com/Nt2WFoS3b0b" },
+  ev:[
+   {t:"8:50 AM", n:"Land at Heathrow", k:"go", d:"Elizabeth Line or Uber to Victoria. Your room is already paid for from the 17th, so you can drop bags and shower the moment you arrive.", map:"Heathrow Airport London"},
+   {t:"11:00 AM", n:"Borough Market for lunch", k:"eat", d:"Monmouth Coffee, Neal's Yard cheese, a fresh raclette. Crossing the Thames on day one is the fastest way to feel like you're actually here.", map:"Borough Market London"},
+   {t:"1:00 PM", n:"South Bank wander", k:"", d:"London Eye, Big Ben, Parliament, then Tate Modern (free) and back over the Millennium Bridge.", map:"South Bank London"},
+   {t:"3:00 PM", n:"Sherlock Holmes Mystery Trail", k:"", d:"App-based walk that has you solving a case through the streets around Baker Street. Ideal for staying upright after an overnight flight.", qr:"sher", map:"Baker Street London"},
+   {t:"5:00 PM", n:"Skoob Books, Bloomsbury", k:"", tag:"g", d:"Thousands of secondhand books in the Brunswick Centre basement. One of the best used bookshops in the city.", link:["skoob.com","https://skoob.com"], map:"Skoob Books London"},
+   {t:"7:00 PM", n:"Harry Potter tour + Thames boat ride", k:"star", tag:"c", d:"The real filming locations with a guide, finishing with a boat ride on the river.", qr:"hp", map:"Leadenhall Market London"},
+   {t:"9:30 PM", n:"Dinner: Padella or Hakata Ramen", k:"eat", d:"Padella near Borough for hand-rolled pasta, or Hakata on Wardour Street for late-night ramen.", link:["padella.co","https://padella.co"], map:"Padella Borough London"},
+   {t:"Late", n:"Nightcap: Cahoots", k:"drink", d:"A 1940s post-war Tube station turned speakeasy. Theatrical, hidden entrance, excellent cocktails.", link:["cahoots.co.uk","https://cahoots.co.uk"], map:"Cahoots Kingly Court London"}
+  ],
+  note:{ txt:"<b>Jet lag:</b> stay up until at least 9 PM. The evening tour is doing double duty here \u2014 it keeps you moving through the worst of it." } },
+
+{ d:"19", m:"Aug", dow:"Wednesday", title:"London to Portsmouth",
+  sub:"Sail-eve \u00b7 Portsmouth Marriott",
+  stay:{ name:"Portsmouth Marriott Hotel", note:"One night \u2014 you board tomorrow" },
+  ev:[
+   {t:"9:00 AM", n:"Breakfast at Giraffe, Victoria", k:"eat", d:"World-food caf\u00e9 around the corner from CitizenM. 120 Wilton Rd, SW1V 1JZ.", map:"Giraffe Victoria London"},
+   {t:"10:30 AM", n:"Notting Hill Bookshop", k:"", tag:"g", d:"The real shop from the 1999 film, on Portobello Road. Strong travel and fiction sections.", map:"Notting Hill Bookshop London"},
+   {t:"12:30 PM", n:"Train: Waterloo \u2192 Portsmouth Harbour", k:"go", d:"Direct, about 1h 45m, trains every 30 minutes. Roughly \u00a315\u201330 each. Book on Trainline for the cheapest advance fare.", link:["Trainline","https://www.thetrainline.com"], map:"London Waterloo Station"},
+   {t:"2:30 PM", n:"Gunwharf Quays waterfront", k:"", d:"Portsmouth's harbourfront \u2014 Spinnaker Tower views over the Solent, shops and waterside restaurants.", link:["gunwharf-quays.com","https://www.gunwharf-quays.com"], map:"Gunwharf Quays Portsmouth"},
+   {t:"4:00 PM", n:"Staggeringly Good Brewery", k:"drink", tag:"g", d:"Portsmouth's own craft brewery and taproom. Dinosaur branding, seriously good IPAs.", link:["staggeringlygood.com","https://staggeringlygood.com"], map:"Staggeringly Good Brewery Portsmouth"},
+   {t:"7:00 PM", n:"Dinner: \u00ccB\u00cdL\u00c9 or Justasia", k:"eat", d:"\u00ccB\u00cdL\u00c9 for West African cooking and cocktails, Justasia for pan-Asian sharing plates. Both are a short walk from the hotel.", map:"IBILE Restaurant Portsmouth"}
+  ],
+  note:{ txt:"<b>Pack tonight.</b> Complete <b>Ready to Sail</b> in the Virgin Voyages Sailor app before you go to bed \u2014 it's how you get your boarding pass." } },
+
+{ d:"20", m:"Aug", dow:"Thursday", title:"Valiant Lady sets sail",
+  sub:"Embarkation, Portsmouth \u00b7 departs 6:00 PM",
+  ev:[
+   {t:"9:00 AM", n:"Drop luggage at the terminal", k:"go", d:"Bags can go in any time after 9 AM, which frees you up to spend the morning in Portsmouth rather than sitting in a terminal.", map:"Portsmouth International Port"},
+   {t:"1:45\u20134:00 PM", n:"Arrive at the terminal", k:"star", d:"This window is firm \u2014 don't arrive before 1:45 PM. Have Ready to Sail finished in the app.", map:"Portsmouth International Port"},
+   {t:"~2:30 PM", n:"Onboard", k:"", d:"Muster drill on your phone, then find your cabin. Book the Redemption Spa and any shows you want the moment you're aboard \u2014 day-one slots go fast."},
+   {t:"6:00 PM", n:"Sail-away party", k:"drink", d:"On deck as Portsmouth drops behind you. Your Splash of Romance package includes an exclusive sail-away hour."},
+   {t:"8:15 PM", n:"Ariya \u2014 dinner", k:"eat", d:"Modern Indian from chef Maneet Chauhan, brand new for 2026. Lamb shank biryani, Goan mussels."},
+   {t:"11:00 PM", n:"The PJ Party at The Manor", k:"drink", d:"Pyjamas, music, and a fair amount of chaos. The more festive the better."}
+  ],
+  note:{ txt:"<b>All aboard is 4:00 PM</b> \u2014 two hours before departure on embarkation day." } },
+
+{ d:"21", m:"Aug", dow:"Friday", title:"Day at sea",
+  sub:"North Sea crossing \u00b7 recovery day",
+  ev:[
+   {t:"Morning", n:"Sleep in", k:"", d:"No alarm. This is the day the jet lag finally lets go."},
+   {t:"11:15 AM", n:"Ariya \u2014 brunch", k:"eat", d:"Razzle Dazzle by day, Ariya by night \u2014 same room, different personality."},
+   {t:"Afternoon", n:"Pool deck, Beach Club, Sundeck", k:"", d:"Book Redemption Spa treatments in the Sailor app if you haven't already. Thermal spa passes are included in your package."},
+   {t:"8:15 PM", n:"The Wake \u2014 dinner", k:"eat", d:"The premium steakhouse. Classic cuts, the closest thing to a formal night on a ship that has no formal nights."}
+  ] },
+
+{ d:"22", m:"Aug", dow:"Saturday", title:"Bruges, Belgium",
+  sub:"Zeebrugge \u00b7 8:00 AM \u2013 6:00 PM",
+  ev:[
+   {t:"9:00 AM", n:"Shuttle to Bruges", k:"go", d:"Pre-booked round-trip coach from Zeebrugge, about 30 minutes each way.", qr:"brug", map:"Zeebrugge Cruise Terminal"},
+   {t:"10:30 AM", n:"The Markt and the Belfry", k:"", d:"Climb the belfry for the view over the medieval rooftops, then wander the churches and the Boniface Bridge.", map:"Markt Bruges"},
+   {t:"1:00 PM", n:"Torture Museum (Oude Steen)", k:"", d:"Medieval instruments in one of the oldest houses in Bruges. You asked for it \u2014 it's genuinely grim and genuinely interesting.", map:"Torture Museum Oude Steen Bruges"},
+   {t:"2:00 PM", n:"Fries, obviously", k:"eat", d:"Belgian frites with andalouse sauce from a stand on the Markt. Non-negotiable."},
+   {t:"3:00 PM", n:"Caf\u00e9 Lucifernum", k:"drink", d:"A former Masonic lodge run as a candlelit rum bar by a self-described vampire. Only open certain afternoons \u2014 worth chancing.", map:"Cafe Lucifernum Bruges"},
+   {t:"Anytime", n:"De Garre", k:"drink", tag:"g", d:"Down an alley barely wide enough for one person. The house tripel is 11% and served with cheese. One of the best bars in Belgium.", map:"De Garre Bruges"},
+   {t:"Anytime", n:"The Chocolate Line", k:"", tag:"c", d:"Dominique Persoone's shop \u2014 world-class pralines, some of them very strange in the best way.", map:"The Chocolate Line Bruges"},
+   {t:"5:00 PM", n:"Shuttle back to the ship", k:"go", d:"Leave yourself margin here. Ship departs 6:00 PM."},
+   {t:"7:45 PM", n:"Pink Agave \u2014 dinner", k:"eat", d:"Modern Mexican, bold and loud, excellent cocktails."}
+  ] },
+
+{ d:"23", m:"Aug", dow:"Sunday", title:"Amsterdam",
+  sub:"8:00 AM \u2013 8:00 PM \u00b7 your busiest day",
+  ev:[
+   {t:"9:30 AM", n:"Coffee in the Jordaan", k:"eat", d:"Chun Caf\u00e9 on Berenstraat, then wander the canals of the Jordaan before the crowds build.", map:"Berenstraat Amsterdam"},
+   {t:"11:00 AM", n:"Coffeeshop stop", k:"", d:"The Rookies is relaxed and central, an easy walk from the museum quarter.", map:"The Rookies Amsterdam"},
+   {t:"11:45 AM", n:"Van Gogh Museum", k:"star", tag:"c", d:"Timed entry. You have a 30-minute grace window, so arrive by 12:15 at the very latest.", qr:"vg_a", map:"Van Gogh Museum Amsterdam"},
+   {t:"2:00 PM", n:"Smoke-friendly canal cruise", k:"", d:"Luxury boat through the canal ring. Carolina is checking whether an earlier slot opens up.", qr:"boat", map:"Amsterdam canal cruise"},
+   {t:"4:30 PM", n:"Heineken Experience", k:"star", tag:"g", d:"Self-guided, about 90 minutes, two drinks included. Arrive 15 minutes before your slot.", qr:"hk_e_a", map:"Heineken Experience Amsterdam"},
+   {t:"6:00 PM", n:"Heineken rooftop bar", k:"drink", d:"Lift up to the sixth-floor terrace for the skyline. Read the timing note below before you order a second round.", qr:"hk_r_a"},
+   {t:"7:00 PM", n:"Back to the ship", k:"go", d:"Roughly 20 minutes by taxi from Stadhouderskade to the cruise terminal at Piet Heinkade.", map:"Amsterdam Cruise Terminal Piet Heinkade"},
+   {t:"9:30 PM", n:"Extra Virgin \u2014 dinner", k:"eat", d:"Mediterranean, handmade pasta, sailing out of Amsterdam. A good way to end this one."}
+  ],
+  note:{ hot:true, txt:"<b>Tight window \u2014 worth a look.</b> The ship leaves Amsterdam at 8:00 PM and Virgin typically closes the gangway before that. Your rooftop slot is 6:00 PM and the terminal is ~20 minutes away, which leaves very little slack. Confirm the exact all-aboard time in the Sailor app once it posts, and treat 7:00 PM as your hard walk-away time from the rooftop." } },
+
+{ d:"24", m:"Aug", dow:"Monday", title:"Hamburg, Germany",
+  sub:"Arrives 6:00 PM \u00b7 overnight in port",
+  ev:[
+   {t:"Morning", n:"Slow start", k:"", d:"Breakfast in The Galley, then the spa. You're at sea until the evening."},
+   {t:"12:30 PM", n:"The Wake \u2014 brunch", k:"eat", d:"Steakhouse brunch. The lobster benedict is the move."},
+   {t:"6:00 PM", n:"Arrive Hamburg \u2014 head ashore", k:"go", d:"You have the whole evening and the ship isn't going anywhere.", map:"Hamburg Cruise Center"},
+   {t:"6:45 PM", n:"Elbphilharmonie plaza", k:"", d:"Free public viewpoint partway up the concert hall, with a full sweep of the harbour. Go at dusk.", map:"Elbphilharmonie Hamburg"},
+   {t:"7:30 PM", n:"Speicherstadt at night", k:"", d:"The red-brick warehouse district, UNESCO-listed and floodlit after dark. Ten minutes on foot from the Elbphilharmonie.", map:"Speicherstadt Hamburg"},
+   {t:"8:00 PM", n:"Dinner ashore", k:"eat", d:"Altes M\u00e4dchen in the Schanzenviertel \u2014 brewery, bakery, and a courtyard beer garden.", tag:"g", map:"Altes Madchen Hamburg"},
+   {t:"9:30 PM", n:"St. Pauli, if you're up for it", k:"drink", d:"The guided pub crawl runs weeknights, meets at 9 PM, about $23 each with shots and club entry. Or take the self-guided Reeperbahn audio walk (~$8) at your own pace.", map:"Reeperbahn Hamburg"}
+  ] },
+
+{ d:"25", m:"Aug", dow:"Tuesday", title:"L\u00fcbeck day trip",
+  sub:"Hamburg \u00b7 ship departs 5:00 PM",
+  ev:[
+   {t:"9:00 AM", n:"Train to L\u00fcbeck", k:"go", d:"About 45 minutes from Hamburg Hbf on the regional service. Buy at the machine or in the DB Navigator app.", map:"Hamburg Hauptbahnhof"},
+   {t:"10:00 AM", n:"The Holstentor", k:"star", d:"The lopsided brick city gate that's on the back of every postcard. The old town behind it is UNESCO-listed in full.", map:"Holstentor Lubeck"},
+   {t:"11:00 AM", n:"Caf\u00e9 Niederegger", k:"eat", d:"The marzipan house since 1806. Buy the nut loaf for the ship, eat the cake there.", map:"Cafe Niederegger Lubeck"},
+   {t:"12:00 PM", n:"St. Mary's and the Salzspeicher", k:"", d:"The fallen bells are still embedded in the floor of St. Mary's where they landed in 1942. The salt warehouses on the water were Nosferatu's house in the 1922 film.", map:"St Marys Church Lubeck"},
+   {t:"2:30 PM", n:"Train back to Hamburg", k:"go", d:"Leave by this time. All aboard is 4:30 PM and the ship departs at 5:00 PM."},
+   {t:"7:45 PM", n:"Extra Virgin \u2014 dinner", k:"eat", d:"Second visit, and worth it."}
+  ],
+  note:{ txt:"<b>Staying in Hamburg instead?</b> Miniatur Wunderland is the largest model railway in the world and far better than that sounds \u2014 book a slot ahead. The Altona fish market runs Sunday mornings only, so it's out this trip." } },
+
+{ d:"26", m:"Aug", dow:"Wednesday", title:"Final day at sea",
+  sub:"Sailing home to Portsmouth",
+  ev:[
+   {t:"All day", n:"Last full day aboard", k:"", d:"Pool, favourite bars, top deck after dark. Spend down the bar tab."},
+   {t:"7:30 PM", n:"The Wake \u2014 dinner", k:"eat", d:"Last proper dinner on the ship."},
+   {t:"Tonight", n:"Pack", k:"", d:"You're carrying your own bags off tomorrow, so nothing needs to go outside the cabin."}
+  ] },
+
+{ d:"27", m:"Aug", dow:"Thursday", title:"Back ashore, back to London",
+  sub:"Disembark Portsmouth \u00b7 The Dixon, Tower Bridge",
+  stay:{ name:"The Dixon, Tower Bridge \u2014 Autograph Collection", note:"Aug 27\u201329 \u00b7 1 room, 2 guests" },
+  ev:[
+   {t:"6:30 AM", n:"Arrive Portsmouth", k:"go", d:"Allow up to an hour for the gangway to open."},
+   {t:"9:00 AM", n:"The Wake \u2014 farewell brunch", k:"eat", d:"Your last meal aboard, booked."},
+   {t:"9:45 AM", n:"Walk off with your own bags", k:"", d:"Self-carry means you leave when you're ready rather than waiting for a luggage group to be called."},
+   {t:"11:00 AM", n:"Train to London Waterloo", k:"go", d:"About 1h 45m. Then across to The Dixon \u2014 leave bags with the concierge if the room isn't ready.", map:"The Dixon Hotel London"},
+   {t:"12:30 PM", n:"Tower Bridge and the Tower of London", k:"", d:"You're staying next door. The bridge walkway has a glass floor; the Tower has the Crown Jewels \u2014 book that one online.", map:"Tower Bridge London"},
+   {t:"2:00 PM", n:"Lunch: Butlers Wharf Chop House", k:"eat", d:"Riverside terrace with the bridge filling the view. Proper British menu.", map:"Butlers Wharf Chop House London"},
+   {t:"4:00 PM", n:"Platform 9\u00be at King's Cross", k:"", tag:"c", d:"Twenty minutes on the tube. Trolley through the wall, shop next door, queue moves quickly.", map:"Platform 9 3/4 Kings Cross London"},
+   {t:"7:30 PM", n:"Dinner: Dishoom Shoreditch or Zapote", k:"eat", d:"Dishoom for Bombay caf\u00e9 food and the black dal. Zapote for Latin American.", link:["dishoom.com","https://www.dishoom.com"], map:"Dishoom Shoreditch London"},
+   {t:"9:15 PM", n:"Nightjar \u2014 booked", k:"star", d:"Your reservation is confirmed for 9:15 PM. Consistently ranked among the world's best cocktail bars \u2014 jazz, swing, and drinks that arrive looking like sculpture.", link:["barnightjar.com","https://barnightjar.com"], map:"Nightjar Shoreditch London"}
+  ] },
+
+{ d:"28", m:"Aug", dow:"Friday", title:"Last full day in London",
+  sub:"Make it count",
+  ev:[
+   {t:"9:00 AM", n:"Bermondsey Street Coffee", k:"eat", d:"Around the corner from the hotel, and one of the better flat whites in the city.", map:"Bermondsey Street Coffee London"},
+   {t:"10:00 AM", n:"Harry Potter locations walk", k:"", tag:"c", d:"Leadenhall Market for the Diagon Alley exterior, Australia House for Gringotts, Great Scotland Yard for the Ministry. Free, self-guided, all walkable.", map:"Leadenhall Market London"},
+   {t:"12:00 PM", n:"Bermondsey Beer Mile", k:"drink", tag:"g", d:"Ten-plus breweries under the railway arches, all within walking distance. Brew By Numbers, Fourpure, Anspach &amp; Hobday.", link:["bermondseybeermile.co.uk","https://bermondseybeermile.co.uk"], map:"Bermondsey Beer Mile London"},
+   {t:"3:00 PM", n:"Hatchards, Piccadilly", k:"", tag:"g", d:"The oldest bookshop in the country, 1797. Five floors, signed editions, and Burlington Arcade is directly across the road.", link:["hatchards.co.uk","https://www.hatchards.co.uk"], map:"Hatchards Piccadilly London"},
+   {t:"4:00 PM", n:"Burlington Arcade", k:"", d:"Covered Regency shopping arcade next to Hatchards \u2014 and the Beadles still enforce a no-whistling rule from 1819.", map:"Burlington Arcade London"},
+   {t:"7:00 PM", n:"Sunset from the Tate Modern terrace", k:"", d:"Free, top floor, and one of the best views in London \u2014 St Paul's, the City, the river turning gold.", map:"Tate Modern London"},
+   {t:"8:00 PM", n:"Farewell dinner: Brat", k:"eat", d:"Wood-fire Basque cooking in Shoreditch. The whole turbot is the reason people go.", link:["bratrestaurant.com","https://bratrestaurant.com"], map:"Brat Restaurant Shoreditch London"},
+   {t:"10:00 PM", n:"Sky Garden \u2014 booked", k:"star", d:"Your 10:00 PM reservation is confirmed. Free entry, 360-degree views, open until midnight. A good last look at the city.", link:["skygarden.london","https://skygarden.london"], map:"Sky Garden London"}
+  ],
+  note:{ txt:"<b>Pack tonight.</b> Delta check-in opens 4:20 PM today for tomorrow's flight \u2014 set an alarm for it." } },
+
+{ d:"29", m:"Aug", dow:"Saturday", title:"Homeward bound",
+  sub:"LHR \u2192 JFK \u00b7 VS4029 \u00b7 4:20 PM",
+  ev:[
+   {t:"9:00 AM", n:"Check out and last breakfast", k:"eat", d:"Checkout is 11 AM. The Table Caf\u00e9 on Southwark Street does a proper full English.", map:"The Table Cafe Southwark London"},
+   {t:"10:00 AM", n:"One last walk", k:"", d:"Borough Market, over London Bridge, look back at The Shard. Then go home.", map:"London Bridge"},
+   {t:"12:30 PM", n:"Head to Heathrow", k:"go", d:"Allow 60\u201375 minutes. Aim to be at the airport by 1:30 PM.", map:"London Bridge Station"},
+   {t:"4:20 PM", n:"VS4029 departs", k:"star", d:"Direct to JFK, landing 7:45 PM. Welcome home."}
+  ] }
+],
+
+/* ── FLIGHTS ────────────────────────────────────────────────────────── */
+flights: [
+  { no:"VS4000", ref:"DSJHZP", from:"JFK", ft:"8:15 PM", fd:"Aug 17",
+    to:"LHR", tt:"8:50 AM", td:"Aug 18 (+1)", note:"Direct \u00b7 operated by Delta" },
+  { no:"VS4029", ref:"DSJHZP", from:"LHR", ft:"4:20 PM", fd:"Aug 29",
+    to:"JFK", tt:"7:45 PM", td:"Aug 29", note:"Direct \u00b7 operated by Delta" }
+],
+
+fare: [["Class","Delta Basic Economy (T)"],["Operated by","Delta Air Lines"],["Booked via","Virgin Atlantic"],["Travellers","Carolina Sanchez \u00b7 Gary B Rosario"]],
+
+travelers: [
+  { name:"Carolina Sanchez", rows:[["TSA PreCheck","ACVPSRHYZ"],["UK ETA","2020-0000-4880-7578"],["CLEAR","Active"]] },
+  { name:"Gary Rosario",     rows:[["TSA PreCheck","ACK4636SQ"],["UK ETA","2020-0000-4865-2551"],["CLEAR","Active"]] }
+],
+
+insurance: [["Provider","Travel Insured International"],["Plan","Worldwide Trip Protector"],["Plan number","260314RTL0713"],["Covers","Aug 17\u201329 \u00b7 UK, BE, NL, DE"],["Each traveller","$4,000 base"],["Claims","855-752-8303"],["Emergency","Robin Assist \u00b7 24/7"]],
+
+stays: [
+  ["CitizenM London Victoria","Aug 17\u201319 \u00b7 1 room, 2 guests"],
+  ["Portsmouth Marriott Hotel","Aug 19\u201320 \u00b7 1 room, 2 guests"],
+  ["Valiant Lady \u00b7 Cabin 12 078Z","Aug 20\u201327 \u00b7 Sea Terrace, Deck 12 mid"],
+  ["The Dixon, Tower Bridge","Aug 27\u201329 \u00b7 1 room, 2 guests"]
+],
+
+/* ── CRUISE ─────────────────────────────────────────────────────────── */
+cruise: {
+  name:"Virgin Voyages \u00b7 Comedy Fest from the UK",
+  sub:"Valiant Lady \u00b7 7 nights \u00b7 Cabin 12 078Z, The Sea Terrace, Deck 12 mid",
+  sched:[
+   {d:1,p:"Portsmouth, United Kingdom",t:"Departs 6:00 PM",w:"All aboard 4:00 PM"},
+   {d:2,p:"Day at sea",t:"North Sea crossing"},
+   {d:3,p:"Zeebrugge (Bruges), Belgium",t:"8:00 AM \u2013 6:00 PM"},
+   {d:4,p:"Amsterdam, Netherlands",t:"8:00 AM \u2013 8:00 PM",w:"Confirm all-aboard in the app"},
+   {d:5,p:"Hamburg, Germany",t:"Arrives 6:00 PM",w:"Overnight in port"},
+   {d:6,p:"Hamburg, Germany",t:"Departs 5:00 PM",w:"All aboard 4:30 PM"},
+   {d:7,p:"Day at sea",t:"Sailing homeward"},
+   {d:8,p:"Portsmouth, United Kingdom",t:"Arrives 6:30 AM",w:"Allow 1 hour for the gangway"}
+  ],
+  dining:[
+   ["Thu, Aug 20","Ariya \u00b7 dinner 8:15 PM"],["Fri, Aug 21","Ariya \u00b7 brunch 11:15 AM"],
+   ["Fri, Aug 21","The Wake \u00b7 dinner 8:15 PM"],["Sat, Aug 22","Pink Agave \u00b7 dinner 7:45 PM"],
+   ["Sun, Aug 23","Extra Virgin \u00b7 dinner 9:30 PM"],["Mon, Aug 24","The Wake \u00b7 brunch 12:30 PM"],
+   ["Mon, Aug 24","Dinner ashore in Hamburg"],["Tue, Aug 25","Extra Virgin \u00b7 dinner 7:45 PM"],
+   ["Wed, Aug 26","The Wake \u00b7 dinner 7:30 PM"],["Thu, Aug 27","The Wake \u00b7 brunch 9:00 AM"]
+  ],
+  addons:["$500 bar tab","$100 bar tab bonus","$50 bar tab bonus","$25 bar tab bonus","$100 Sailor Loot","Premium wi-fi","Priority boarding","Splash of Romance"],
+  splash:["Priority boarding","Two 3-hour thermal spa passes","Exclusive sail-away hour","A Shake for Champagne","Cold-pressed juices daily","Collection of chocolates"]
+},
+
+/* ── TIPS ───────────────────────────────────────────────────────────── */
+tips: [
+ { q:"Before you fly", a:[
+   "<b>UK ETA</b> is linked digitally to your passports \u2014 there's no stamp or sticker. Reference numbers are in Trip info above.",
+   "<b>Delta app</b> handles check-in even though these are Virgin Atlantic flight numbers. Check-in opens exactly 24 hours before each departure.",
+   "<b>Basic Economy</b> means seats are assigned at check-in and changes are restricted. Worth knowing before you're at the gate.",
+   "<b>eSIM:</b> Saily's 15-day Europe plan at around $45 covers all four countries. Install it before you leave home but don't activate until you land."
+  ]},
+ { q:"Money and plugs", a:[
+   "<b>Two plug types.</b> The UK uses Type G. Belgium, the Netherlands and Germany use Type C/F. You need both, or one universal adapter each.",
+   "<b>On the ship</b> the outlets are US-style, so no adapter needed in the cabin \u2014 only ashore.",
+   "<b>Contactless everywhere.</b> Tap your card straight onto the TfL readers in London \u2014 no Oyster card needed, and it's cheaper than paper tickets.",
+   "<b>Tipping:</b> 10\u201312.5% in UK restaurants, and often already added as service charge. Check the bill first. Gratuities are already included in your cruise fare."
+  ]},
+ { q:"Apps worth having", a:[
+   "<b>Virgin Voyages Sailor</b> \u2014 boarding pass, restaurant changes, spa, shows, and the all-aboard times for each port.",
+   "<b>Citymapper</b> \u2014 the best transit app for London, Amsterdam and Hamburg. Better than Google Maps for door-to-door.",
+   "<b>Trainline</b> \u2014 UK rail tickets, including your Portsmouth runs.",
+   "<b>DB Navigator</b> \u2014 German rail, for the L\u00fcbeck day.",
+   "<b>Uber, Bolt and FREENOW</b> all work in London. Bolt and Uber both work in Amsterdam; FREENOW is strongest in Hamburg."
+  ]},
+ { q:"On the ship", a:[
+   "<b>All dining is included.</b> Every restaurant, no surcharges. Only premium bottles cost extra.",
+   "<b>No dress codes at all.</b> Virgin has no formal nights. Wear what you like to dinner.",
+   "<b>Book the spa on embarkation day</b> \u2014 Redemption Spa fills up within hours of boarding.",
+   "<b>All-aboard is not negotiable.</b> The ship will leave without you. Always build in a buffer, especially in Amsterdam."
+  ]},
+ { q:"Packing", a:[
+   "<b>Layers.</b> August is 20\u201323\u00b0C in London and cooler on deck at sea. A light waterproof jacket earns its space.",
+   "<b>Broken-in walking shoes.</b> You're on cobbles in Bruges and L\u00fcbeck \u2014 leave anything new at home.",
+   "<b>One nice outfit each</b> for Nightjar and Brat. Nothing formal needed, just not shorts.",
+   "<b>Theme nights:</b> red or white for Scarlet Night, pyjamas for the PJ Party, gold for We Fancy. Pack accordingly \u2014 people go all in.",
+   "<b>A folding day bag</b> for port days, and a portable charger each."
+  ]}
+]
+
+};
+</script>
+<header class="hero">
+  <div class="eyebrow" id="h-eye"></div>
+  <h1 id="h-title"></h1>
+  <div class="hero-sub" id="h-path"></div>
+  <div class="route" id="h-chips"></div>
+  <div class="count"><div class="count-n" id="c-n"></div><div class="count-l" id="c-l"></div></div>
+</header>
+
+<div class="navwrap" id="navwrap">
+  <nav class="nav" id="nav">
+    <a href="#passes" class="on">Tickets</a>
+    <a href="#days">Day by day</a>
+    <a href="#ship">The ship</a>
+    <a href="#info">Trip info</a>
+    <a href="#tips">Good to know</a>
+  </nav>
+  <div class="subnav" id="subnav"></div>
+</div>
+
+<section class="sec" id="passes">
+  <div class="sec-hd"><div><div class="sec-k">Tap to open</div><h2>Tickets &amp; passes</h2></div></div>
+  <p class="sec-note">Everything you've booked, in one place. The museum and brewery passes open the real ticket PDF from the issuer &mdash; the same document that landed in your inbox.</p>
+  <div id="wallet"></div>
+  <div class="note"><div><b>Save this page to your home screen.</b> In Safari or Chrome, tap Share, then Add to Home Screen. It opens like an app, and every ticket keeps a backup code that scans with no signal.</div></div>
+</section>
+
+<section class="sec sec-alt" id="days">
+  <div class="sec-hd"><div><div class="sec-k">August 18 &ndash; 29</div><h2>Day by day</h2></div></div>
+  <p class="sec-note">Tap a day to open it, or jump straight to one from the bar above. Nothing here is compulsory &mdash; it's a strong suggestion you're free to ignore in favour of a good bar.</p>
+  <div id="dayList" style="margin-top:14px"></div>
+</section>
+
+<section class="sec" id="ship">
+  <div class="sec-hd"><div><div class="sec-k" id="ship-k"></div><h2>The ship</h2></div></div>
+  <p class="sec-note" id="ship-sub"></p>
+  <div class="card" id="s-sched" style="margin-top:18px"><div class="card-k">Sail schedule</div><div class="sched" id="sched"></div></div>
+  <div class="card" id="s-dining" style="margin-top:11px"><div class="card-k">Your dining reservations</div><dl id="dining"></dl></div>
+  <div class="card" id="s-addons" style="margin-top:11px"><div class="card-k">Add-ons purchased</div><div id="addons"></div></div>
+  <div class="card" id="s-splash" style="margin-top:11px"><div class="card-k">Splash of Romance</div><div id="splash"></div></div>
+  <div class="note"><div>Restaurants, spa, shows and shore excursions are all booked through the <b>Sailor app</b> &mdash; there's no website version. Download it before you board.</div></div>
+</section>
+
+<section class="sec sec-alt" id="info">
+  <div class="sec-hd"><div><div class="sec-k">Confirmations</div><h2>Trip info</h2></div></div>
+  <div id="i-flights" style="margin-top:18px"></div>
+  <div class="card" id="i-fare" style="margin-top:11px"><div class="card-k">Fare details</div><dl id="fare"></dl></div>
+  <div class="card" id="i-stays" style="margin-top:11px"><div class="card-k">Where you're staying</div><dl id="stays"></dl></div>
+  <div id="i-trav"></div>
+  <div class="card" id="i-ins" style="margin-top:11px"><div class="card-k">Travel insurance</div><dl id="ins"></dl></div>
+</section>
+
+<section class="sec" id="tips">
+  <div class="sec-hd"><div><div class="sec-k">Practical</div><h2>Good to know</h2></div></div>
+  <div id="tipList" style="margin-top:16px"></div>
+</section>
+
+<footer>
+  <strong>Claudia</strong>
+  Your travel advisor &mdash; reach me any time, including while you're away.<br>
+  <span style="opacity:.6;font-size:11px">Last updated 22 July 2026</span>
+</footer>
+</div><!-- /wrap -->
+
+<div class="ov" id="ov" role="dialog" aria-modal="true" aria-label="Ticket">
+  <div style="width:100%;max-width:400px;margin:auto">
+    <button class="tk-close" id="ovClose">Close</button>
+    <div id="tkSlot"></div>
+    <div class="tk-nav"><button id="tkPrev">&larr; Previous</button><button id="tkNext">Next &rarr;</button></div>
+  </div>
+</div>
+
+<script>
+(function(){
+const $ = s => document.querySelector(s);
+const gmap = q => 'https://maps.google.com/?q=' + encodeURIComponent(q);
+const dl = rows => rows.map(r=>`<div class="row"><dt>${r[0]}</dt><dd class="${/^[A-Z0-9\-]{6,}$/.test(r[1])?'mono':''}">${r[1]}</dd></div>`).join('');
+const MON={Jan:'January',Feb:'February',Mar:'March',Apr:'April',May:'May',Jun:'June',
+           Jul:'July',Aug:'August',Sep:'September',Oct:'October',Nov:'November',Dec:'December'};
+
+/* ── HERO + COUNTDOWN ─────────────────────────────── */
+$('#h-eye').innerHTML = TRIP.meta.dates + ' &middot; ' + TRIP.meta.who;
+$('#h-title').innerHTML = TRIP.meta.title1 + '<br><em>' + TRIP.meta.title2 + '</em>';
+$('#h-path').innerHTML = TRIP.meta.path;
+$('#h-chips').innerHTML = TRIP.meta.chips.map(c=>`<span>${c}</span>`).join('');
+(function(){
+  const now=new Date(), s=new Date(TRIP.meta.start+'T00:00:00'), e=new Date(TRIP.meta.end+'T23:59:59');
+  const days=Math.ceil((s-now)/864e5);
+  if(now>e){ $('#c-n').textContent='\u2713'; $('#c-l').innerHTML='<b>Welcome home</b>What a trip that was.'; }
+  else if(now>=s){ const d=Math.floor((now-s)/864e5)+1; $('#c-n').textContent='Day '+d; $('#c-l').innerHTML='<b>You\u2019re on the trip</b>Scroll down for today.'; }
+  else { $('#c-n').textContent=days; $('#c-l').innerHTML='<b>'+(days===1?'day':'days')+' to go</b>Wheels up '+TRIP.meta.dates.split('&ndash;')[0].trim()+'.'; }
+})();
+
+/* ── WALLET, GROUPED BY DATE ──────────────────────── */
+const byId={}, groups=[];
+TRIP.tickets.forEach((t,i)=>{
+  t._i=i; byId[t.id]=t;
+  const key=t.m+t.d;
+  let g=groups.find(x=>x.key===key);
+  if(!g){ g={key,d:t.d,m:t.m,id:'g-'+t.m.toLowerCase()+t.d,items:[]}; groups.push(g); }
+  g.items.push(t);
+});
+const arrow='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>';
+$('#wallet').innerHTML = groups.map(g=>{
+  const dayMeta=TRIP.days.find(d=>d.d===g.d&&d.m===g.m);
+  const passes=g.items.map(t=>{
+    const chip = t.hold ? '<span class="chip c-hold">Unconfirmed</span>'
+               : t.pdf  ? '<span class="chip c-qr">Ticket PDF</span>'
+               : '<span class="chip c-ref">Reference</span>';
+    return `<button class="pass" data-t="${t.id}">
+      <span class="pass-stub"><span class="d">${t.d}</span><span class="m">${t.m}</span></span>
+      <span class="pass-body"><span class="pass-t">${t.name}</span>
+        <span class="pass-s">${chip}<span>${t.when}</span></span></span>
+      <span class="pass-go">${arrow}</span></button>`;
+  }).join('');
+  return `<div class="wgroup" id="${g.id}">
+    <div class="wgroup-h"><b>${MON[g.m]} ${g.d}</b><i></i><em>${dayMeta?dayMeta.title:''}</em></div>
+    <div class="wallet">${passes}</div></div>`;
+}).join('');
+
+/* ── TICKET OVERLAY ───────────────────────────────── */
+const ov=$('#ov'), slot=$('#tkSlot'); let cur=-1, lastFocus=null;
+const pdfIcon='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8"/></svg>';
+function paint(i){
+  const t=TRIP.tickets[i]; cur=i;
+  let main;
+  if(t.pdf){
+    main = `<div class="tk-qr" style="padding:18px 20px 6px">
+      <a class="pdf-btn" href="${t.pdf}" target="_blank" rel="noopener">${pdfIcon} Open the ticket PDF</a>
+      <button class="qr-toggle" data-qr>Show backup code (works offline) &rsaquo;</button>
+      <div class="qr-fold"><img src="${QR[t.qr]}" alt="Backup scannable code for ${t.name}"></div></div>`;
+  } else {
+    main = `<div class="tk-qr"><div style="font-family:var(--mono);font-size:25px;font-weight:700;padding:14px 0">${t.ref}</div>
+      <div style="font-size:11.5px;color:var(--muted)">Booking reference</div></div>`;
+  }
+  slot.innerHTML = `<div class="ticket">
+    <div class="tk-top"><div class="tk-venue">${t.venue}</div><div class="tk-name">${t.name}</div><div class="tk-when">${t.when}</div></div>
+    <div class="tk-notch"><i></i></div>
+    ${main}
+    <div class="tk-meta"><dl>${t.rows.map(r=>`<div class="tk-row"><dt>${r[0]}</dt><dd>${r[1]}</dd></div>`).join('')}
+      <div class="tk-row"><dt>${t.pdf?'Ticket number':'Reference'}</dt><dd>${t.ref}</dd></div></dl></div>
+    <div class="tk-tip">${t.tip}</div></div>`;
+  $('#tkPrev').disabled=i<=0; $('#tkNext').disabled=i>=TRIP.tickets.length-1;
+  ov.scrollTop=0;
+}
+function openTk(id){ lastFocus=document.activeElement; paint(byId[id]._i); ov.classList.add('open');
+  document.body.style.overflow='hidden'; $('#ovClose').focus(); }
+function closeTk(){ ov.classList.remove('open'); document.body.style.overflow='';
+  if(lastFocus) lastFocus.focus(); }
+$('#ovClose').onclick=closeTk; $('#tkPrev').onclick=()=>paint(cur-1); $('#tkNext').onclick=()=>paint(cur+1);
+ov.addEventListener('click',e=>{
+  if(e.target===ov){ closeTk(); return; }
+  const q=e.target.closest('[data-qr]');
+  if(q){ const f=q.nextElementSibling, on=f.classList.toggle('on');
+    q.innerHTML = on ? 'Hide backup code &rsaquo;' : 'Show backup code (works offline) &rsaquo;'; }
+});
+document.addEventListener('keydown',e=>{ if(!ov.classList.contains('open'))return;
+  if(e.key==='Escape')closeTk();
+  if(e.key==='ArrowLeft'&&cur>0)paint(cur-1);
+  if(e.key==='ArrowRight'&&cur<TRIP.tickets.length-1)paint(cur+1); });
+
+/* ── DAYS (all collapsed on load) ─────────────────── */
+$('#dayList').innerHTML = TRIP.days.map((day,di)=>{
+  const evs=day.ev.map(v=>{
+    const a=[];
+    if(v.qr) a.push(`<button class="lnk qr" data-t="${v.qr}">Show ticket</button>`);
+    if(v.link) a.push(`<a class="lnk" href="${v.link[1]}" target="_blank" rel="noopener">${v.link[0]} &#8599;</a>`);
+    if(v.map) a.push(`<a class="lnk" href="${gmap(v.map)}" target="_blank" rel="noopener">Map</a>`);
+    if(v.tag==='c') a.push('<span class="tag t-c">For Carolina</span>');
+    if(v.tag==='g') a.push('<span class="tag t-g">For Gary</span>');
+    return `<div class="ev k-${v.k||''}"><div class="ev-t">${v.t}</div><div class="ev-n">${v.n}</div>
+      <div class="ev-d">${v.d}</div>${a.length?`<div class="ev-a">${a.join('')}</div>`:''}</div>`;
+  }).join('');
+  const stay=day.stay?`<div class="note"><div><b>${day.stay.name}</b><br>${day.stay.note}${
+      day.stay.url?` &middot; <a href="${day.stay.url}" target="_blank" rel="noopener" style="color:var(--crimson)">Booking &#8599;</a>`:''}</div></div>`:'';
+  const note=day.note?`<div class="note ${day.note.hot?'hot':''}"><div>${day.note.txt}</div></div>`:'';
+  return `<div class="day" id="day-${di}" data-d="${di}">
+    <button class="day-hd" data-day="${di}" aria-expanded="false">
+      <span class="day-date"><span class="n">${day.d}</span><span class="m">${day.m}</span></span>
+      <span class="day-tt"><h3>${day.title}</h3><p>${day.dow} &middot; ${day.sub}</p></span>
+      <span class="day-cv">&rsaquo;</span></button>
+    <div class="day-bd">${stay}<div class="tl">${evs}</div>${note}</div></div>`;
+}).join('');
+
+/* ── SHIP / INFO / TIPS ───────────────────────────── */
+$('#ship-k').textContent=TRIP.cruise.name; $('#ship-sub').innerHTML=TRIP.cruise.sub;
+$('#sched').innerHTML=TRIP.cruise.sched.map(s=>`<div class="sr"><div class="d">${s.d}</div>
+  <div><div class="p">${s.p}</div><div class="t">${s.t}</div>${s.w?`<div class="w">${s.w}</div>`:''}</div></div>`).join('');
+$('#dining').innerHTML=dl(TRIP.cruise.dining);
+$('#addons').innerHTML=TRIP.cruise.addons.map(a=>`<div class="li">${a}</div>`).join('');
+$('#splash').innerHTML=TRIP.cruise.splash.map(a=>`<div class="li">${a}</div>`).join('');
+$('#i-flights').innerHTML=TRIP.flights.map(f=>`<div class="fl">
+  <div class="fl-hd"><div class="fl-no">${f.no}</div><div class="fl-ref">${f.ref}</div></div>
+  <div class="fl-rt">
+    <div class="fl-pt"><div class="i">${f.from}</div><div class="t">${f.ft}</div><div class="dt">${f.fd}</div></div>
+    <div class="fl-mid"><span>&#9992;</span><small>${f.note}</small></div>
+    <div class="fl-pt"><div class="i">${f.to}</div><div class="t">${f.tt}</div><div class="dt">${f.td}</div></div>
+  </div></div>`).join('');
+$('#fare').innerHTML=dl(TRIP.fare);
+$('#stays').innerHTML=dl(TRIP.stays);
+$('#i-trav').innerHTML=TRIP.travelers.map(t=>`<div class="card" style="margin-top:11px"><div class="card-k">${t.name}</div><dl>${dl(t.rows)}</dl></div>`).join('');
+$('#ins').innerHTML=dl(TRIP.insurance);
+$('#tipList').innerHTML=TRIP.tips.map((t,i)=>`<div class="acc" id="tip-${i}">
+  <button class="acc-h" data-acc aria-expanded="false">${t.q}<span>&rsaquo;</span></button>
+  <div class="acc-b">${t.a.map(x=>`<div class="li">${x}</div>`).join('')}</div></div>`).join('');
+
+/* ── ONE CLICK HANDLER ────────────────────────────── */
+document.addEventListener('click',e=>{
+  const p=e.target.closest('[data-t]');   if(p){ openTk(p.dataset.t); return; }
+  const d=e.target.closest('[data-day]'); if(d){
+    d.setAttribute('aria-expanded', d.parentElement.classList.toggle('on')); return; }
+  const a=e.target.closest('[data-acc]'); if(a){
+    a.setAttribute('aria-expanded', a.parentElement.classList.toggle('on')); return; }
+});
+
+/* ── SUB-NAV ──────────────────────────────────────── */
+const SUB={
+  passes: groups.map(g=>({l:g.m+' '+g.d, t:g.id})),
+  days:   TRIP.days.map((d,i)=>({l:d.d, t:'day-'+i, open:'day'})),
+  ship:   [{l:'Sail schedule',t:'s-sched'},{l:'Dining reservations',t:'s-dining'},
+           {l:'Add-ons',t:'s-addons'},{l:'Splash of Romance',t:'s-splash'}],
+  info:   [{l:'Flights',t:'i-flights'},{l:'Fare',t:'i-fare'},{l:'Stays',t:'i-stays'},
+           {l:'Travellers',t:'i-trav'},{l:'Insurance',t:'i-ins'}],
+  tips:   TRIP.tips.map((t,i)=>({l:t.q, t:'tip-'+i, open:'acc'}))
+};
+function scrollYTo(y){
+  try{ window.scrollTo({top:y,behavior:'smooth'}); }catch(e){ window.scrollTo(0,y); }
+}
+function scrollXTo(node,x){
+  if(typeof node.scrollTo==='function'){ try{ node.scrollTo({left:x,behavior:'smooth'}); return; }catch(e){} }
+  node.scrollLeft=x;
+}
+const KEYS=['passes','days','ship','info','tips'];
+const LABEL={passes:'Jump to',days:'Day',ship:'Section',info:'Section',tips:'Topic'};
+const navwrap=$('#navwrap'), subnav=$('#subnav'), navLinks=[].slice.call(document.querySelectorAll('.nav a'));
+let curSec=-1;
+
+function setNavHeight(){
+  document.documentElement.style.setProperty('--navh', navwrap.offsetHeight+'px');
+}
+function renderSub(k){
+  subnav.className='subnav'+(k==='days'?' days':'');
+  subnav.innerHTML='<span class="sk">'+LABEL[k]+'</span>'+
+    SUB[k].map(s=>`<button data-jump="${s.t}"${s.open?` data-open="${s.open}"`:''}>${s.l}</button>`).join('');
+  setNavHeight();
+}
+subnav.addEventListener('click',e=>{
+  const b=e.target.closest('[data-jump]'); if(!b)return;
+  const node=document.getElementById(b.dataset.jump); if(!node)return;
+  if(b.dataset.open==='day'&&!node.classList.contains('on')){
+    node.classList.add('on'); node.querySelector('.day-hd').setAttribute('aria-expanded','true'); }
+  if(b.dataset.open==='acc'&&!node.classList.contains('on')){
+    node.classList.add('on'); node.querySelector('.acc-h').setAttribute('aria-expanded','true'); }
+  requestAnimationFrame(()=>{
+    const y=node.getBoundingClientRect().top+window.scrollY-navwrap.offsetHeight-8;
+    scrollYTo(y);
+  });
+});
+
+let ticking=false;
+function onScroll(){
+  const h=navwrap.offsetHeight, probe=window.scrollY+h+24;
+  let si=0;
+  KEYS.forEach((k,i)=>{ const el=document.getElementById(k);
+    if(el && el.getBoundingClientRect().top+window.scrollY<=probe) si=i; });
+  if(si!==curSec){
+    curSec=si; renderSub(KEYS[si]);
+    navLinks.forEach((l,j)=>l.classList.toggle('on',j===si));
+  }
+  const items=[].slice.call(subnav.querySelectorAll('[data-jump]'));
+  let best=0;
+  items.forEach((b,i)=>{ const n=document.getElementById(b.dataset.jump);
+    if(n && n.getBoundingClientRect().top+window.scrollY<=probe+8) best=i; });
+  items.forEach((b,i)=>b.classList.toggle('on',i===best));
+  const act=items[best];
+  if(act && subnav.scrollWidth>subnav.clientWidth){
+    const l=act.offsetLeft, r=l+act.offsetWidth;
+    if(l<subnav.scrollLeft+40 || r>subnav.scrollLeft+subnav.clientWidth-40)
+      scrollXTo(subnav, Math.max(0,l-90));
+  }
+  ticking=false;
+}
+window.addEventListener('scroll',()=>{ if(!ticking){ ticking=true; requestAnimationFrame(onScroll); }},{passive:true});
+window.addEventListener('resize',()=>{ setNavHeight(); onScroll(); });
+navLinks.forEach(l=>l.addEventListener('click',()=>setTimeout(onScroll,60)));
+renderSub('passes'); setNavHeight(); onScroll();
+window.addEventListener('load',setNavHeight);
+})();
+</script>
+</body>
+</html>
